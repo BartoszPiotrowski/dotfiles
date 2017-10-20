@@ -1,0 +1,23 @@
+set first-page-column 1
+set statusbar-home-tilde true
+
+set recolor true
+set recolor-darkcolor "#000000" 
+set recolor-lightcolor "#DFD8BD"
+
+#set default-bg "#002b36"
+#set default-fg "#002b36"
+#set statusbar-bg "#002b36"
+#set notification-bg "#DFD8BD"
+#set tabbar-bg "#002b36"
+#set tabbar-focus-bg "#002b36"
+#set inputbar-bg "#002b36"
+#set highlight-color "#002b36"
+
+set smooth-scroll true
+
+set selection-clipboard clipboard
+
+# key bindings
+map <Right> scroll half-down
+map <Left> scroll half-up
