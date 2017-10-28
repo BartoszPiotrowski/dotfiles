@@ -109,6 +109,7 @@ alias nn="vim ~/Dropbox/notes.md"
 alias cc="vim ~/Dropbox/Lists/lektury.md"
 alias ww="vim ~/Dropbox/Lists/parole.md"
 alias wwe="vim ~/Dropbox/Lists/parole_en.md"
+alias gge="vim ~/Dropbox/Personal/Lists/english_grammar_notes.md"
 
 alias z600="ssh -t bp319501@students.mimuw.edu.pl ssh bartosz@10.3.5.247"
 alias grid01="ssh bartosz@grid01.ciirc.cvut.cz"
@@ -135,7 +136,6 @@ stty -ixon
 export MIZFILES="/usr/local/share/mizar"
 
 #eval `opam config env`
-
 
 # temporary aliases
 alias PhD="cd ~/PhD"
