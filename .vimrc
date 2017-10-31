@@ -30,6 +30,10 @@ let python_highlight_all = 1
 set background=dark
 colorscheme base16-solarized-dark
 
+set relativenumber
+highlight LineNr ctermfg=DarkGrey ctermbg=NONE
+highlight CursorLineNr ctermfg=DarkGrey ctermbg=NONE
+
 " Syntastic options
 "let g:syntastic_python_checkers = ['flake8']
 "
@@ -59,6 +63,7 @@ let g:ycm_global_ycm_extra_conf = '/usr/share/vim/vimfiles/third_party/ycmd/cpp/
 let g:ycm_server_python_interpreter = '/usr/bin/python2'
 " let g:ycm_autoclose_preview_window_after_completion=1
 " let g:ycm_autoclose_preview_window_after_insertion = 1
+set completeopt-=preview
 
 let g:vim_markdown_folding_disabled = 1
 
