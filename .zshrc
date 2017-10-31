@@ -97,19 +97,6 @@ alias B="rsync -av \
 --exclude '*Trash*' \
 ~/ /run/media/bartosz/BACKUPSTICK/"
 
-alias BWD="rsync -av \
---exclude '.*' \
---exclude 'tmp*' \
---exclude 'Videos' \
---exclude 'Music' \
---exclude 'Pictures' \
---exclude 'Downloads' \
---exclude 'R' \
---exclude 'E' \
---exclude '.cache' \
---exclude '*Trash*' \
-~/ /run/media/bartosz/BACKUPSTICK/"
-
 # rsync will delete files not present in ~/
 alias BD="rsync -av --delete \
 --exclude 'tmp*' \
@@ -123,7 +110,18 @@ alias BD="rsync -av --delete \
 --exclude '*Trash*' \
 ~/ /run/media/bartosz/BACKUPSTICK/"
 
-alias usb="cd /run/media/bartosz/"
+alias BWD="rsync -av \
+--exclude '.*' \
+--exclude 'tmp*' \
+--exclude 'Videos' \
+--exclude 'Music' \
+--exclude 'Pictures' \
+--exclude 'Downloads' \
+--exclude 'R' \
+--exclude 'E' \
+--exclude '.cache' \
+--exclude '*Trash*' \
+~/ /run/media/bartosz/BACKUPSTICK/"
 
 alias u="yaourt -Syyuu --noconfirm"
 alias s="yaourt -Ss"
