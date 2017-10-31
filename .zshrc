@@ -154,6 +154,7 @@ alias grid01="ssh bartosz@grid01.ciirc.cvut.cz"
 alias grid="ssh piotrbar@grid.ciirc.cvut.cz"
 alias duch="ssh bp319501@duch.mimuw.edu.pl"
 alias students="ssh bp319501@students.mimuw.edu.pl"
+alias icm="ssh bartosz@login.icm.edu.pl"
 
 alias sls="screen -ls"
 alias sr="screen -r"
