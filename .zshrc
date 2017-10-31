@@ -84,6 +84,47 @@ export EDITOR='vim'
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+alias B="rsync -av \
+--exclude 'tmp*' \
+--exclude 'Videos' \
+--exclude 'Music' \
+--exclude 'Pictures' \
+--exclude 'Downloads' \
+--exclude 'R' \
+--exclude 'E' \
+--exclude '.cache' \
+--exclude '*Trash*' \
+~/ /run/media/bartosz/BACKUPSTICK/"
+
+alias BWD="rsync -av \
+--exclude '.*' \
+--exclude 'tmp*' \
+--exclude 'Videos' \
+--exclude 'Music' \
+--exclude 'Pictures' \
+--exclude 'Downloads' \
+--exclude 'R' \
+--exclude 'E' \
+--exclude '.cache' \
+--exclude '*Trash*' \
+~/ /run/media/bartosz/BACKUPSTICK/"
+
+# rsync will delete files not present in ~/
+alias BD="rsync -av --delete \
+--exclude 'tmp*' \
+--exclude 'Videos' \
+--exclude 'Music' \
+--exclude 'Pictures' \
+--exclude 'Downloads' \
+--exclude 'R' \
+--exclude 'E' \
+--exclude '.cache' \
+--exclude '*Trash*' \
+~/ /run/media/bartosz/BACKUPSTICK/"
+
+alias usb="cd /run/media/bartosz/"
+
 alias u="yaourt -Syyuu --noconfirm"
 alias s="yaourt -Ss"
 alias i="yaourt -S"
@@ -109,10 +150,10 @@ alias nn="vim ~/Dropbox/notes.md"
 alias cc="vim ~/Dropbox/Lists/lektury.md"
 alias ww="vim ~/Dropbox/Lists/parole.md"
 alias wwe="vim ~/Dropbox/Lists/parole_en.md"
-alias gge="vim ~/Dropbox/Personal/Lists/english_grammar_notes.md"
 
 alias z600="ssh -t bp319501@students.mimuw.edu.pl ssh bartosz@10.3.5.247"
 alias grid01="ssh bartosz@grid01.ciirc.cvut.cz"
+alias grid="ssh piotrbar@grid.ciirc.cvut.cz"
 alias duch="ssh bp319501@duch.mimuw.edu.pl"
 alias students="ssh bp319501@students.mimuw.edu.pl"
 
@@ -136,6 +177,7 @@ stty -ixon
 export MIZFILES="/usr/local/share/mizar"
 
 #eval `opam config env`
+
 
 # temporary aliases
 alias PhD="cd ~/PhD"
