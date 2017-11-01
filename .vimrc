@@ -65,6 +65,9 @@ let g:ycm_server_python_interpreter = '/usr/bin/python2'
 " let g:ycm_autoclose_preview_window_after_insertion = 1
 set completeopt-=preview
 
+" copying to clipboard
+set clipboard=unnamedplus
+
 let g:vim_markdown_folding_disabled = 1
 
 let g:AutoPairsUseInsertedCount = 1
