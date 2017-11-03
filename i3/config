@@ -30,8 +30,8 @@ font pango:DejaVu Sans Mono 8
 # X core fonts rendering does not support right-to-left and this being a bitmap
 # font, it doesn’t scale on retina/hidpi displays.
 
-#Wallpaper
-exec --no-startup-id feh --bg-max /home/bartosz/Obrazy/tapety/VfW36pI.jpg
+# Wallpaper
+# exec --no-startup-id feh --bg-max /home/bartosz/Obrazy/tapety/VfW36pI.jpg
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -40,7 +40,8 @@ floating_modifier $mod
 bindsym $mod+Return exec i3-sensible-terminal
 
 # start a terminal within working directory
-bindsym $mod+Shift+Return exec .config/i3/xfce4-terminal-pwd.sh
+# bindsym $mod+Shift+Return exec .config/i3/xfce4-terminal-pwd.sh
+bindsym $mod+Shift+Return exec xfce4-terminal --default-working-directory="$(< ${HOME}/.cwd)"
 
 # start internet browser
 bindsym $mod+x exec firefox
