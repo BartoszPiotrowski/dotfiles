@@ -21,6 +21,9 @@ Plugin 'tpope/vim-surround'
 Plugin 'git@github.com:hdima/python-syntax.git'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
+"Plugin 'vim-airline/vim-airline'
+"Plugin 'vim-airline/vim-airline-themes'
+"Plugin 'chrisbra/csv.vim'
 call vundle#end()
 
 syntax enable
@@ -34,8 +37,15 @@ set relativenumber
 highlight LineNr ctermfg=DarkGrey ctermbg=NONE
 highlight CursorLineNr ctermfg=DarkGrey ctermbg=NONE
 
+" Disable Arrow keys in Escape mode
+map <up> <nop>
+map <down> <nop>
+map <left> <nop>
+map <right> <nop>
+
+" let g:airline_theme='base16'
 " Syntastic options
-"let g:syntastic_python_checkers = ['flake8']
+" let g:syntastic_python_checkers = ['flake8']
 "
 "set statusline+=%#warningmsg#
 "set statusline+=%{SyntasticStatuslineFlag()}
@@ -45,6 +55,14 @@ highlight CursorLineNr ctermfg=DarkGrey ctermbg=NONE
 "let g:syntastic_auto_loc_list = 1
 "let g:syntastic_check_on_open = 1
 "let g:syntastic_check_on_wq = 0
+
+" Statusline
+"set noruler
+"set laststatus=2
+
+
+set rulerformat=%50(%#Bold#\ %-t\ %m\ %#Bold#\ %4(%l:%c%V%)\ %k\ %4p%%%)
+
 
 set breakindent
 set linebreak
@@ -83,7 +101,7 @@ au CursorHold * checktime
 set gdefault
 
 " Highlighting
-set hlsearch
+" set hlsearch
 " search as characters are entered
 set incsearch
 " turn off search highlight
