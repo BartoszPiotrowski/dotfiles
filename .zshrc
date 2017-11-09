@@ -1,6 +1,10 @@
 # Path to your oh-my-zsh installation.
   export ZSH=/home/bartosz/.oh-my-zsh
 
+# Vim key bindings
+bindkey -v
+export KEYTIMEOUT=1
+
 ZSH_THEME="robbyrussell"
 
 # Uncomment the following line to use case-sensitive completion.
@@ -23,7 +27,7 @@ HYPHEN_INSENSITIVE="true"
 # DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
-ENABLE_CORRECTION="true"
+# ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 COMPLETION_WAITING_DOTS="true"
@@ -45,8 +49,7 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git sudo python web-search
-common-aliases)
+plugins=(git sudo python web-search common-aliases autojump)
 
 # User configuration
 
@@ -83,8 +86,9 @@ export EDITOR='vim'
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+#
 
-alias B="rsync -av \
+alias bb="rsync -av \
 --exclude 'tmp*' \
 --exclude 'Videos' \
 --exclude 'Music' \
@@ -97,7 +101,7 @@ alias B="rsync -av \
 ~/ /run/media/bartosz/BACKUPSTICK/"
 
 # rsync will delete files not present in ~/
-alias BD="rsync -av --delete \
+alias bbd="rsync -av --delete \
 --exclude 'tmp*' \
 --exclude 'Videos' \
 --exclude 'Music' \
@@ -109,9 +113,24 @@ alias BD="rsync -av --delete \
 --exclude '*Trash*' \
 ~/ /run/media/bartosz/BACKUPSTICK/"
 
-alias BWD="rsync -av \
+alias bbs="rsync -av \
 --exclude '.*' \
 --exclude 'tmp*' \
+--exclude 'Videos' \
+--exclude 'Music' \
+--exclude 'Pictures' \
+--exclude 'Downloads' \
+--exclude 'R' \
+--exclude 'E' \
+--exclude '.cache' \
+--exclude '*Trash*' \
+~/ /run/media/bartosz/BACKUPSTICK/"
+
+alias bbss="rsync -av \
+--exclude '.*' \
+--exclude 'tmp*' \
+--exclude 'Archivalias' \
+--exclude 'Dropbox' \
 --exclude 'Videos' \
 --exclude 'Music' \
 --exclude 'Pictures' \
