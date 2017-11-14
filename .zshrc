@@ -150,7 +150,7 @@ alias v="vim"
 
 alias z='f() {(zathura $1 &)};f'
 alias zz='f() {(zathura $1 &) && exit};f'
-alias zn='f() {(zathura $1"pdf" &) && (vim $1"notes.md")};f'
+alias zn='f() {(zathura $1 &) && (vim $HOME"/Dropbox/reading_notes/"$(basename $1 .pdf)".md")};f'
 
 alias -s pdf=zathura
 alias -s ps=zathura
