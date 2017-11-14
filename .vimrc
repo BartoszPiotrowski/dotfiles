@@ -103,7 +103,7 @@ set gdefault
 " Highlighting
 " set hlsearch
 " search as characters are entered
-set incsearch
+" set incsearch
 " turn off search highlight
 nnoremap <space> :nohlsearch<CR>
 
