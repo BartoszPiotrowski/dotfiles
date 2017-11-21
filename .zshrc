@@ -116,21 +116,7 @@ alias bbd="rsync -av --delete \
 alias bbs="rsync -av \
 --exclude '.*' \
 --exclude 'tmp*' \
---exclude 'Videos' \
---exclude 'Music' \
---exclude 'Pictures' \
---exclude 'Downloads' \
---exclude 'R' \
---exclude 'E' \
---exclude '.cache' \
---exclude '*Trash*' \
-~/ /run/media/bartosz/BACKUPSTICK/"
-
-alias bbss="rsync -av \
---exclude '.*' \
---exclude 'tmp*' \
 --exclude 'Archivalias' \
---exclude 'Dropbox' \
 --exclude 'Videos' \
 --exclude 'Music' \
 --exclude 'Pictures' \
@@ -150,7 +136,7 @@ alias v="vim"
 
 alias z='f() {(zathura $1 &)};f'
 alias zz='f() {(zathura $1 &) && exit};f'
-alias zn='f() {(zathura $1 &) && (vim $HOME"/Dropbox/reading_notes/"$(basename $1 .pdf)".md")};f'
+alias zn='f() {(zathura $1 &) && (vim $HOME"/Dropbox/reading_notes/"$(basename $1 .pdf)"__NOTES.md")};f'
 
 alias -s pdf=zathura
 alias -s ps=zathura
