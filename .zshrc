@@ -127,20 +127,22 @@ alias bbs="rsync -av \
 --exclude '*Trash*' \
 ~/ /run/media/bartosz/BACKUPSTICK/"
 
+alias bbp="rsync -av \
+--exclude '.*' \
+--exclude 'tmp*' \
+--exclude '.cache' \
+--exclude '*Trash*' \
+~/PhD/ /run/media/bartosz/BACKUPSTICK/PhD/"
+
 alias u="yaourt -Syyuu --noconfirm"
 alias s="yaourt -Ss"
 alias i="yaourt -S"
 alias id="pacman -Qs"
 
-alias v="vim"
-
 alias z='f() {(zathura $1 &)};f'
 alias zz='f() {(zathura $1 &) && exit};f'
-alias zn='f() {(zathura $1 &) && (vim $HOME"/Dropbox/reading_notes/"$(basename $1 .pdf)"__NOTES.md")};f'
-
-alias -s pdf=zathura
-alias -s ps=zathura
-alias -s djvu=zathura
+#alias zn='f() {(zathura $1 &) && (vim $HOME"/Dropbox/reading_notes/"$(basename $1 .pdf)"__NOTES.md")};f'
+alias zn='f() {(zathura $1".pdf" &) && (vim $1"__NOTES.md")};f'
 
 _editor_fts=(cpp cxx cc c hh h inl asc txt TXT tex md py)
 for ft in $_editor_fts ; do alias -s $ft=$EDITOR ; done
@@ -151,14 +153,15 @@ alias tts="vim ~/Dropbox/Lists/TODO-study.md"
 alias pp="vim ~/Dropbox/Lists/tabelaProgresu.md"
 alias hh="vim ~/Dropbox/homepage.html"
 alias nn="vim ~/Dropbox/notes.md"
-alias cc="vim ~/Dropbox/Lists/lektury.md"
 alias ww="vim ~/Dropbox/Lists/parole.md"
 alias wwe="vim ~/Dropbox/Lists/parole_en.md"
 alias gge="vim ~/Dropbox/Lists/english_grammar_notes.md"
+alias ll="vim ~/Dropbox/Lists/lektury.md"
 
 alias z600="ssh -t bp319501@students.mimuw.edu.pl ssh bartosz@10.3.5.247"
 alias grid01="ssh bartosz@grid01.ciirc.cvut.cz"
-alias grid="ssh piotrbar@grid.ciirc.cvut.cz"
+alias grid03="ssh piotrbar@grid.ciirc.cvut.cz"
+alias grid05="ssh -t piotrbar@grid.ciirc.cvut.cz ssh 10.35.125.54"
 alias duch="ssh bp319501@duch.mimuw.edu.pl"
 alias students="ssh bp319501@students.mimuw.edu.pl"
 alias icm="ssh bartosz@login.icm.edu.pl"
@@ -176,7 +179,6 @@ alias py="python3"
 
 alias duh="du -h -d 1 | sort -hr"
 alias unlock='sudo rm /var/lib/pacman/db.lck'
-alias conf='/usr/bin/git --git-dir=/home/bartosz/.dotfiles --work-tree=/home/bartosz'
 
 alias fd='find . -type d -name'
 alias ff='find . -type f -name'
@@ -187,10 +189,3 @@ alias gg='grep -rnwI . -e'
 stty -ixon
 
 export MIZFILES="/usr/local/share/mizar"
-
-#eval `opam config env`
-
-
-# temporary aliases
-alias PhD="cd ~/PhD"
-alias prs="cd ~/PhD/premise-selection-deepmath-style"

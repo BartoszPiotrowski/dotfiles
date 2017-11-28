@@ -12,12 +12,13 @@
 force_xinerama yes
 
 set $mod Mod4
-new_window none
-# new_window pixel 1
-# hide_edge_borders smart
+# new_window none
+new_window pixel 2
+hide_edge_borders smart
+# client.unfocused #073642
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-#font pango:monospace 8
+# font pango:monospace 8
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -53,10 +54,7 @@ bindsym $mod+m exec thunderbird
 bindsym $mod+c exec speedcrunch
 
 # start calendar
-bindsym $mod+k exec gsimplecal
-
-# start rstudio
-bindsym $mod+o exec rstudio-bin
+bindsym $mod+v exec gsimplecal
 
 # start file manager
 bindsym $mod+t exec thunar
@@ -65,13 +63,18 @@ bindsym $mod+t exec thunar
 bindsym $mod+z exec rofi -show drun
 
 # start mps-youtube
-bindsym $mod+y exec xfce4-terminal -exec mpsyt
+# bindsym $mod+y exec xfce4-terminal -exec mpsyt
 
 # kill focused window
 bindsym $mod+Escape kill
 
 # xfce settings
 bindsym $mod+Shift+s exec xfce4-settings-manager
+
+# ssh to grid01/03/05... in a new terminal
+bindsym $mod+y exec xfce4-terminal -exec 'ssh bartosz@grid01.ciirc.cvut.cz'
+bindsym $mod+u exec xfce4-terminal -exec 'ssh piotrbar@grid.ciirc.cvut.cz'
+bindsym $mod+i exec xfce4-terminal -exec 'ssh -t piotrbar@grid.ciirc.cvut.cz ssh 10.35.125.54'
 
 # start dmenu (a program launcher)
 #bindsym $mod+d exec dmenu_run
@@ -88,16 +91,16 @@ bindsym $mod+End exec xfce4-session-logout --suspend
 bindsym $mod+Shift+End exec xfce4-session-logout --shutdown
 
 # change focus
-#bindsym $mod+j focus left
-#bindsym $mod+k focus down
-#bindsym $mod+l focus up
-#bindsym $mod+semicolon focus right
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
 
 # alternatively, you can use the cursor keys:
-bindsym $mod+Left focus left
-bindsym $mod+Down focus down
-bindsym $mod+Up focus up
-bindsym $mod+Right focus right
+#bindsym $mod+Left focus left
+#bindsym $mod+Down focus down
+#bindsym $mod+Up focus up
+#bindsym $mod+Right focus right
 
 # nowrap script in /usr/local/bin/ (does not work)
 # bindsym $mod+Left exec i3-focus-nowrap.sh left
@@ -106,22 +109,22 @@ bindsym $mod+Right focus right
 # bindsym $mod+Right exec i3-focus-nowrap.sh right
 
 # move focused window
-bindsym $mod+Shift+j move left
-bindsym $mod+Shift+k move down
-bindsym $mod+Shift+l move up
-bindsym $mod+Shift+semicolon move right
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
 
 # alternatively, you can use the cursor keys:
-bindsym $mod+Shift+Left move left
-bindsym $mod+Shift+Down move down
-bindsym $mod+Shift+Up move up
-bindsym $mod+Shift+Right move right
+#bindsym $mod+Shift+Left move left
+#bindsym $mod+Shift+Down move down
+#bindsym $mod+Shift+Up move up
+#bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
-bindsym $mod+h split h
+bindsym $mod+backslash split h
 
 # split in vertical orientation
-bindsym $mod+v split v
+bindsym $mod+minus split v
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
