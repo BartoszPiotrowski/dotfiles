@@ -251,7 +251,7 @@ alias duh="du -h -d 1 | sort -hr"
 
 alias sls="screen -ls"
 alias sr="screen -r"
-alias sS="screen -S"
+alias ss="screen -S"
 
 alias py="python3"
 

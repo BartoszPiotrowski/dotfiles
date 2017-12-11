@@ -61,6 +61,10 @@ source $ZSH/oh-my-zsh.sh
 precmd() { eval "$PROMPT_COMMAND" }
 PROMPT_COMMAND='pwd > "${HOME}/.cwd"'
 
+# because git add completion was slow
+__git_files () {
+    _wanted files expl 'local files' _files
+}
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
@@ -149,10 +153,13 @@ for ft in $_editor_fts ; do alias -s $ft=$EDITOR ; done
 
 alias tt="vim ~/Dropbox/Lists/TODO.md"
 alias ttc="vim ~/Dropbox/Lists/TODO-computer.md"
-alias tts="vim ~/Dropbox/Lists/TODO-study.md"
+alias tts="vim ~/Dropbox/Lists/TODO-sidestudy.md"
+alias ttp="vim ~/Dropbox/Lists/TODO-phd.md"
+alias ddp="vim ~/Dropbox/Lists/DEADLINES-phd.md"
+alias nnp="vim ~/Dropbox/notes-phd.md"
+alias nn="vim ~/Dropbox/notes.md"
 alias pp="vim ~/Dropbox/Lists/tabelaProgresu.md"
 alias hh="vim ~/Dropbox/homepage.html"
-alias nn="vim ~/Dropbox/notes.md"
 alias ww="vim ~/Dropbox/Lists/parole.md"
 alias wwe="vim ~/Dropbox/Lists/parole_en.md"
 alias gge="vim ~/Dropbox/Lists/english_grammar_notes.md"
