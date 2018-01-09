@@ -118,6 +118,8 @@ fi
 
 export EDITOR='vim'
 
+export EPROVER='/home/bartosz/E/PROVER/eprover'
+
 alias g='git'
 alias ga='git add'
 alias gaa='git add --all'
