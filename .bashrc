@@ -118,7 +118,7 @@ fi
 
 export EDITOR='vim'
 
-export EPROVER='/home/bartosz/E/PROVER/eprover'
+export EPROVER='/home/piotrbar/E/PROVER/eprover'
 
 alias g='git'
 alias ga='git add'
