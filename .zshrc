@@ -1,6 +1,8 @@
 # Path to your oh-my-zsh installation.
   export ZSH=/home/bartosz/.oh-my-zsh
 
+  export EPROVER=/home/bartosz/PhD/E/PROVER/eprover
+
 # Vim key bindings
 bindkey -v
 export KEYTIMEOUT=1
@@ -170,6 +172,7 @@ alias z600="ssh -t bp319501@students.mimuw.edu.pl ssh bartosz@10.3.5.247"
 alias grid01="ssh bartosz@grid01.ciirc.cvut.cz"
 alias grid03="ssh piotrbar@grid.ciirc.cvut.cz"
 alias grid05="ssh -t piotrbar@grid.ciirc.cvut.cz ssh 10.35.125.54"
+alias grid04="ssh -t piotrbar@grid.ciirc.cvut.cz ssh 10.35.125.53"
 alias duch="ssh bp319501@duch.mimuw.edu.pl"
 alias students="ssh bp319501@students.mimuw.edu.pl"
 alias icm="ssh bartosz@login.icm.edu.pl"
