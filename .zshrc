@@ -145,10 +145,13 @@ alias s="yaourt -Ss"
 alias i="yaourt -S"
 alias id="pacman -Qs"
 
+alias vim='f() {vim $1 && clear};f'
 alias z='f() {(zathura $1 &)};f'
 alias zz='f() {(zathura $1 &) && exit};f'
 #alias zn='f() {(zathura $1 &) && (vim $HOME"/Dropbox/reading_notes/"$(basename $1 .pdf)"__NOTES.md")};f'
 alias zn='f() {(zathura $1".pdf" &) && (vim $1"__NOTES.md")};f'
+
+alias vn=viewnior
 
 _editor_fts=(cpp cxx cc c hh h inl asc txt TXT tex md py)
 for ft in $_editor_fts ; do alias -s $ft=$EDITOR ; done
