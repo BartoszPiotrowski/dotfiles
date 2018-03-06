@@ -146,9 +146,10 @@ nmap EN :set spell spelllang=en<CR>
 
 
 " Define specific options for some file types
-"autocmd FileType plaintex,tex call ModeTex()
-"
-"function! ModeTex()
+autocmd FileType plaintex,tex call ModeTex()
+
+function! ModeTex()
+	iab FR \begin{frame}<CR>\end{frame}<CR><Up><CR><Up><Tab><C-R><CR>
 "	iab IT \begin{itemize}<CR>\end{itemize}<CR><Up><CR><Up>\item<CR>\item<Up>
 "	iab EN \begin{enumerate}<CR>\end{enumerate}<CR><Up><CR><Up>\item<CR>\item<Up>
 ""
@@ -245,4 +246,7 @@ nmap EN :set spell spelllang=en<CR>
 "	iab p_ \bar{p}
 "	iab q_ \bar{q}
 "
-"endfunction
+endfunction
+" set t_te=
+" set t_ti=""
+au VimLeave * :!clear
