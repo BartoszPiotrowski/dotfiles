@@ -40,10 +40,10 @@ highlight LineNr ctermfg=DarkGrey ctermbg=NONE
 highlight CursorLineNr ctermfg=DarkGrey ctermbg=NONE
 
 " Disable Arrow keys in Escape mode
-map <up> <nop>
-map <down> <nop>
-map <left> <nop>
-map <right> <nop>
+" map <up> <nop>
+" map <down> <nop>
+" map <left> <nop>
+" map <right> <nop>
 
 " let g:airline_theme='base16'
 " Syntastic options
@@ -150,6 +150,11 @@ autocmd FileType plaintex,tex call ModeTex()
 
 function! ModeTex()
 	iab FR \begin{frame}<CR>\end{frame}<CR><Up><CR><Up><Tab><C-R><CR>
+	iab SL \begin{frame}<CR>\end{frame}<CR><Up><CR><Up><Tab><C-R><CR>
+	iab IT \begin{itemize}<CR>\end{itemize}<CR><Up><CR><Up><Tab><C-R><CR>
+	iab EN \begin{enumerate}<CR>\end{enumerate}<CR><Up><CR><Up><Tab><C-R><CR>
+	iab BL \begin{block}<CR>\end{block}<CR><Up><CR><Up><Tab><C-R><CR>
+	iab EQ \begin{equation}<CR>\end{equation}<CR><Up><CR><Up><Tab><C-R><CR>
 "	iab IT \begin{itemize}<CR>\end{itemize}<CR><Up><CR><Up>\item<CR>\item<Up>
 "	iab EN \begin{enumerate}<CR>\end{enumerate}<CR><Up><CR><Up>\item<CR>\item<Up>
 ""
