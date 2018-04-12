@@ -121,9 +121,9 @@ let g:tex_comment_nospell = 1
 " substitute in all lines
 nmap <C-s> :%s/
 
-nmap W :w<CR>
-nmap WW :wq<CR>
-nmap Q :q<CR>
+"nmap W :w<CR>
+"nmap WW :wq<CR>
+"nmap Q :q<CR>
 
 nmap PL :set spell spelllang=pl<CR>
 nmap EN :set spell spelllang=en<CR>
