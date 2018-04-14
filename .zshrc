@@ -1,7 +1,9 @@
 # Path to your oh-my-zsh installation.
-  export ZSH=/home/bartosz/.oh-my-zsh
+export ZSH=/home/bartosz/.oh-my-zsh
 
-  export EPROVER=/home/bartosz/PhD/E/PROVER/eprover
+export EPROVER=/home/bartosz/PhD/E/PROVER/eprover
+alias eprover="/home/bartosz/PhD/E/PROVER/eprover"
+
 
 # Vim key bindings
 bindkey -v
@@ -150,6 +152,7 @@ alias z='f() {(zathura $1 &)};f'
 alias zz='f() {(zathura $1 &) && exit};f'
 #alias zn='f() {(zathura $1 &) && (vim $HOME"/Dropbox/reading_notes/"$(basename $1 .pdf)"__NOTES.md")};f'
 alias zn='f() {(zathura $1".pdf" &) && (vim $1"__NOTES.md")};f'
+
 
 alias vn=viewnior
 
