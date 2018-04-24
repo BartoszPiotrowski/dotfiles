@@ -147,6 +147,8 @@ alias s="yaourt -Ss"
 alias i="yaourt -S"
 alias id="pacman -Qs"
 
+alias pep="autopep8 -aaaaaaaaaaaaaaaaaa"
+
 alias vim='f() {vim $1 && clear};f'
 alias z='f() {(zathura $1 &)};f'
 alias zz='f() {(zathura $1 &) && exit};f'
