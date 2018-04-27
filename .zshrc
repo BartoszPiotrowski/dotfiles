@@ -147,7 +147,9 @@ alias s="yaourt -Ss"
 alias i="yaourt -S"
 alias id="pacman -Qs"
 
-alias pep="autopep8 -aaaaaaaaaaaaaaaaaa"
+pep () {
+	autopep8 -aaaaaaaaaaaaaaaaaa $1 --in-place
+}
 
 alias vim='f() {vim $1 && clear};f'
 alias z='f() {(zathura $1 &)};f'
@@ -211,6 +213,11 @@ alias fd='find . -type d -name'
 alias ff='find . -type f -name'
 # grep string in all non-binary files in current directory
 alias gg='grep -rnwI . -e'
+
+mcd () {
+    mkdir -p $1
+    cd $1
+}
 
 #so as not to be disturbed by Ctrl-S Ctrl-Q in terminals:
 stty -ixon
