@@ -165,15 +165,16 @@ for ft in $_editor_fts ; do alias -s $ft=$EDITOR ; done
 
 alias tt="vim ~/Dropbox/Lists/TODO.md"
 alias ttc="vim ~/Dropbox/Lists/TODO-computer.md"
-alias tts="vim ~/Dropbox/Lists/TODO-sidestudy.md"
+alias ttss="vim ~/Dropbox/Lists/TODO-sidestudy.md"
 alias ttp="vim ~/Dropbox/Lists/TODO-phd.md"
-alias ddz="vim ~/Dropbox/Lists/DEADLINES-life.md"
 alias nnp="vim ~/Dropbox/notes-phd.md"
 alias nn="vim ~/Dropbox/notes.md"
-alias pp="vim ~/Dropbox/Lists/tabelaProgresu.md"
+alias ppp="vim ~/Dropbox/PhD/papers.md"
 alias hh="vim ~/Dropbox/homepage.html"
 alias ww="vim ~/Dropbox/Lists/parole.md"
 alias wwe="vim ~/Dropbox/Lists/parole_en.md"
+alias wwl="vim ~/Dropbox/Lists/parole_lt.md"
+alias wwc="vim ~/Dropbox/Lists/parole_cz.md"
 alias gge="vim ~/Dropbox/Lists/english_grammar_notes.md"
 
 alias z600="ssh -t bp319501@students.mimuw.edu.pl ssh bartosz@10.3.5.247"
@@ -200,11 +201,9 @@ alias sls="screen -ls"
 alias sr="screen -r"
 alias sS="screen -S"
 
-alias vv="vim ~/.vimrc"
-alias vz="vim ~/.zshrc"
-alias vi3="vim ~/.config/i3/config"
-
 alias py="python3"
+alias py3="python3"
+alias py2="python2"
 
 alias duh="du -h -d 1 | sort -hr"
 alias unlock='sudo rm /var/lib/pacman/db.lck'
