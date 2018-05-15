@@ -1,9 +1,5 @@
 # Path to your oh-my-zsh installation.
-export ZSH=/home/bartosz/.oh-my-zsh
-
-export EPROVER=/home/bartosz/PhD/E/PROVER/eprover
-alias eprover="/home/bartosz/PhD/E/PROVER/eprover"
-
+  export ZSH=/home/bartosz/.oh-my-zsh
 
 # Vim key bindings
 bindkey -v
@@ -147,51 +143,32 @@ alias s="yaourt -Ss"
 alias i="yaourt -S"
 alias id="pacman -Qs"
 
-pep () {
-	autopep8 -aaaaaaaaaaaaaaaaaa $1 --in-place
-}
-
-alias vim='f() {vim $1 && clear};f'
 alias z='f() {(zathura $1 &)};f'
 alias zz='f() {(zathura $1 &) && exit};f'
 #alias zn='f() {(zathura $1 &) && (vim $HOME"/Dropbox/reading_notes/"$(basename $1 .pdf)"__NOTES.md")};f'
 alias zn='f() {(zathura $1".pdf" &) && (vim $1"__NOTES.md")};f'
 
-
-alias vn=viewnior
-
 _editor_fts=(cpp cxx cc c hh h inl asc txt TXT tex md py)
 for ft in $_editor_fts ; do alias -s $ft=$EDITOR ; done
 
-alias tt="vim ~/Documents/Lists/TODO.md"
-alias ttc="vim ~/Documents/Lists/TODO-computer.md"
-alias tts="vim ~/Documents/Lists/TODO-sidestudy.md"
-alias ttp="vim ~/PhD/TODO.md"
-alias nnp="vim ~/PhD/NOTES.md"
-alias nn="vim ~/Documents/NOTES.md"
-alias ppp="vim ~/PhD/PAPERS.md"
-alias hh="vim ~/Documents/homepage.html"
-alias ww="vim ~/Documents/Lists/parole.md"
-alias wwe="vim ~/Documents/Lists/parole_en.md"
-alias wwl="vim ~/Documents/Lists/parole_lt.md"
-alias wwc="vim ~/Documents/Lists/parole_cz.md"
-alias gge="vim ~/Documents/Lists/english_grammar_notes.md"
+alias tt="vim ~/Dropbox/Lists/TODO.md"
+alias ttc="vim ~/Dropbox/Lists/TODO-computer.md"
+alias tts="vim ~/Dropbox/Lists/TODO-sidestudy.md"
+alias ttp="vim ~/Dropbox/Lists/TODO-phd.md"
+alias ddp="vim ~/Dropbox/Lists/DEADLINES-phd.md"
+alias nnp="vim ~/Dropbox/notes-phd.md"
+alias nn="vim ~/Dropbox/notes.md"
+alias pp="vim ~/Dropbox/Lists/tabelaProgresu.md"
+alias hh="vim ~/Dropbox/homepage.html"
+alias ww="vim ~/Dropbox/Lists/parole.md"
+alias wwe="vim ~/Dropbox/Lists/parole_en.md"
+alias gge="vim ~/Dropbox/Lists/english_grammar_notes.md"
+alias ll="vim ~/Dropbox/Lists/lektury.md"
 
 alias z600="ssh -t bp319501@students.mimuw.edu.pl ssh bartosz@10.3.5.247"
 alias grid01="ssh bartosz@grid01.ciirc.cvut.cz"
 alias grid03="ssh piotrbar@grid.ciirc.cvut.cz"
-alias grid04="ssh -t piotrbar@grid.ciirc.cvut.cz ssh 10.35.125.53"
 alias grid05="ssh -t piotrbar@grid.ciirc.cvut.cz ssh 10.35.125.54"
-alias grid06="ssh -t piotrbar@grid.ciirc.cvut.cz ssh 10.35.125.50"
-alias grid07="ssh -t piotrbar@grid.ciirc.cvut.cz ssh 10.35.125.55"
-alias grid08="ssh -t piotrbar@grid.ciirc.cvut.cz ssh 10.35.125.56"
-alias grid09="ssh -t piotrbar@grid.ciirc.cvut.cz ssh 10.35.125.57"
-alias grid10="ssh -t piotrbar@grid.ciirc.cvut.cz ssh 10.35.125.58"
-alias grid11="ssh -t piotrbar@grid.ciirc.cvut.cz ssh 10.35.125.59"
-alias grid12="ssh -t piotrbar@grid.ciirc.cvut.cz ssh 10.35.125.60"
-alias grid13="ssh -t piotrbar@grid.ciirc.cvut.cz ssh 10.35.125.61"
-alias grid14="ssh -t piotrbar@grid.ciirc.cvut.cz ssh 10.35.125.62"
-alias air01="ssh -t bartosz@grid01.ciirc.cvut.cz ssh 10.35.125.68"
 alias duch="ssh bp319501@duch.mimuw.edu.pl"
 alias students="ssh bp319501@students.mimuw.edu.pl"
 alias icm="ssh bartosz@login.icm.edu.pl"
@@ -201,9 +178,11 @@ alias sls="screen -ls"
 alias sr="screen -r"
 alias sS="screen -S"
 
+alias vv="vim ~/.vimrc"
+alias vz="vim ~/.zshrc"
+alias vi3="vim ~/.config/i3/config"
+
 alias py="python3"
-alias py3="python3"
-alias py2="python2"
 
 alias duh="du -h -d 1 | sort -hr"
 alias unlock='sudo rm /var/lib/pacman/db.lck'
@@ -212,11 +191,6 @@ alias fd='find . -type d -name'
 alias ff='find . -type f -name'
 # grep string in all non-binary files in current directory
 alias gg='grep -rnwI . -e'
-
-mcd () {
-    mkdir -p $1
-    cd $1
-}
 
 #so as not to be disturbed by Ctrl-S Ctrl-Q in terminals:
 stty -ixon
