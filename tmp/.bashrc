@@ -118,8 +118,6 @@ fi
 
 export EDITOR='vim'
 
-export EPROVER='/home/piotrbar/E/PROVER/eprover'
-
 alias g='git'
 alias ga='git add'
 alias gaa='git add --all'
