@@ -56,6 +56,9 @@ bindsym $mod+c exec speedcrunch
 # start calendar
 bindsym $mod+v exec gsimplecal
 
+# start Syncthing GUI
+bindsym $mod+s exec firefox https://localhost:8384/
+
 # start file manager
 bindsym $mod+t exec thunar
 
@@ -130,7 +133,7 @@ bindsym $mod+minus split v
 bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
+# bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
