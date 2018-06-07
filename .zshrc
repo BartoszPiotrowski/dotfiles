@@ -163,19 +163,20 @@ alias vn=viewnior
 _editor_fts=(cpp cxx cc c hh h inl asc txt TXT tex md py)
 for ft in $_editor_fts ; do alias -s $ft=$EDITOR ; done
 
-alias tt="vim ~/Notes/TODO.md"
+alias tt= "vim ~/Notes/TODO.md"
+alias nn= "vim ~/Notes/NOTES.md"
 alias ttc="vim ~/Notes/TODO-computer.md"
 alias tts="vim ~/Notes/TODO-sidestudy.md"
-alias ttp="vim ~/PhD/TODO.md"
-alias nnp="vim ~/PhD/Notes/NOTES.md"
-alias nn="vim ~/Notes/NOTES.md"
-alias ppp="vim ~/PhD/Notes/PAPERS.md"
-alias hh="vim ~/Documents/homepage.html"
-alias ww="vim ~/Notes/parole.md"
+alias ww= "vim ~/Notes/parole.md"
 alias wwe="vim ~/Notes/parole_en.md"
 alias wwl="vim ~/Notes/parole_lt.md"
 alias wwc="vim ~/Notes/parole_cz.md"
 alias gge="vim ~/Notes/english_grammar_notes.md"
+alias ttp="vim ~/PhD/Notes/TODO.md"
+alias nnp="vim ~/PhD/Notes/NOTES.md"
+alias pps="vim ~/PhD/Notes/PAPERS-summaries.md"
+alias ppq="vim ~/PhD/Notes/PAPERS-queue.md"
+alias hh= "vim ~/Documents/homepage.html"
 
 alias z600="ssh -t bp319501@students.mimuw.edu.pl ssh bartosz@10.3.5.247"
 alias grid01="ssh bartosz@grid01.ciirc.cvut.cz"
