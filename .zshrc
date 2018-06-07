@@ -166,7 +166,8 @@ for ft in $_editor_fts ; do alias -s $ft=$EDITOR ; done
 alias tt="vim ~/Notes/TODO.md"
 alias nn="vim ~/Notes/NOTES.md"
 alias ttc="vim ~/Notes/TODO-computer.md"
-alias tts="vim ~/Notes/TODO-sidestudy.md"
+alias ss="vim ~/Notes/TODO-sidestudy.md"
+alias bb="vim ~/Notes/BOOKS-queue.md"
 alias ww="vim ~/Notes/parole.md"
 alias wwe="vim ~/Notes/parole_en.md"
 alias wwl="vim ~/Notes/parole_lt.md"
@@ -174,6 +175,7 @@ alias wwc="vim ~/Notes/parole_cz.md"
 alias gge="vim ~/Notes/english_grammar_notes.md"
 alias ttp="vim ~/PhD/NOTES/TODO.md"
 alias nnp="vim ~/PhD/NOTES/NOTES.md"
+alias bbp="vim ~/PhD/NOTES/BOOKS-queue.md"
 alias pps="vim ~/PhD/NOTES/PAPERS-summaries.md"
 alias ppq="vim ~/PhD/NOTES/PAPERS-queue.md"
 alias hh="vim ~/Documents/homepage.html"
@@ -209,10 +211,12 @@ alias py2="python2"
 alias duh="du -h -d 1 | sort -hr"
 alias unlock='sudo rm /var/lib/pacman/db.lck'
 
-alias fd='find . -type d -name'
-alias ff='find . -type f -name'
-# grep string in all non-binary files in current directory
-alias gg='grep -rnwI . -e'
+alias fd='find . -type d -iname'
+alias ff='find . -type f -iname'
+
+# grep lines containing regexp pattern in all non-binary files in current
+# directory (and its subdirectories, recursively)
+alias gg='grep -rnI . -e'
 
 mcd () {
     mkdir -p $1
