@@ -163,11 +163,11 @@ alias vn=viewnior
 _editor_fts=(cpp cxx cc c hh h inl asc txt TXT tex md py)
 for ft in $_editor_fts ; do alias -s $ft=$EDITOR ; done
 
-alias tt= "vim ~/Notes/TODO.md"
-alias nn= "vim ~/Notes/NOTES.md"
+alias tt="vim ~/Notes/TODO.md"
+alias nn="vim ~/Notes/NOTES.md"
 alias ttc="vim ~/Notes/TODO-computer.md"
 alias tts="vim ~/Notes/TODO-sidestudy.md"
-alias ww= "vim ~/Notes/parole.md"
+alias ww="vim ~/Notes/parole.md"
 alias wwe="vim ~/Notes/parole_en.md"
 alias wwl="vim ~/Notes/parole_lt.md"
 alias wwc="vim ~/Notes/parole_cz.md"
@@ -176,7 +176,7 @@ alias ttp="vim ~/PhD/NOTES/TODO.md"
 alias nnp="vim ~/PhD/NOTES/NOTES.md"
 alias pps="vim ~/PhD/NOTES/PAPERS-summaries.md"
 alias ppq="vim ~/PhD/NOTES/PAPERS-queue.md"
-alias hh= "vim ~/Documents/homepage.html"
+alias hh="vim ~/Documents/homepage.html"
 
 alias z600="ssh -t bp319501@students.mimuw.edu.pl ssh bartosz@10.3.5.247"
 alias grid01="ssh bartosz@grid01.ciirc.cvut.cz"
