@@ -214,6 +214,27 @@ alias unlock='sudo rm /var/lib/pacman/db.lck'
 alias fd='find . -type d -iname'
 alias ff='find . -type f -iname'
 
+f () {
+	find . -type f -iname '*'$1'*'
+}
+
+zff () {
+	zathura $(ff $1)
+}
+
+zf () {
+	zathura $(f $1)
+}
+
+zzf () {
+	(zathura $(f $1) &) && exit
+}
+
+zzff () {
+	(zathura $(ff $1) &) && exit
+}
+
+
 # grep lines containing regexp pattern in all non-binary files in current
 # directory (and its subdirectories, recursively)
 alias gg='grep -rnI . -e'
