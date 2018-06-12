@@ -211,29 +211,15 @@ alias py2="python2"
 alias duh="du -h -d 1 | sort -hr"
 alias unlock='sudo rm /var/lib/pacman/db.lck'
 
-alias fd='find . -type d -iname'
-alias ff='find . -type f -iname'
+alias fd='f() {find . -type d -iname "*"$1"*"};f'
+alias ff='f() {find . -type f -iname "*"$1"*"};f'
+alias fff='find . -type f -iname'
+alias ffd='find . -type d -iname'
 
-f () {
-	find . -type f -iname '*'$1'*'
-}
-
-zff () {
-	zathura $(ff $1)
-}
-
-zf () {
-	zathura $(f $1)
-}
-
-zzf () {
-	(zathura $(f $1) &) && exit
-}
-
-zzff () {
-	(zathura $(ff $1) &) && exit
-}
-
+alias zff='f(){zathura $(ff $1)};f'
+alias zfff='f(){zathura $(fff $1)};f'
+alias zzff='f(){(zathura $(ff $1) &) && exit};f'
+alias zzfff='f(){(zathura $(fff $1) &) && exit};f'
 
 # grep lines containing regexp pattern in all non-binary files in current
 # directory (and its subdirectories, recursively)
