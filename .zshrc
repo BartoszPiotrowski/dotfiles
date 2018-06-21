@@ -151,7 +151,7 @@ pep () {
 	autopep8 -aaaaaaaaaaaaaaaaaa $1 --in-place
 }
 
-alias vim='f() {vim $1 && clear};f'
+#alias vim='f() {vim $1 && clear};f'
 alias z='f() {(zathura $1 &)};f'
 alias zz='f() {(zathura $1 &) && exit};f'
 #alias zn='f() {(zathura $1 &) && (vim $HOME"/Dropbox/reading_notes/"$(basename $1 .pdf)"__NOTES.md")};f'
