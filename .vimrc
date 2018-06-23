@@ -112,6 +112,7 @@ nnoremap <space> :nohlsearch<CR>
 " Vimtex compile shortcut
 nmap T :VimtexCompile<CR>
 
+
 let g:tex_flavor = "latex"
 let g:tex_fast = "cmMprs"
 let g:tex_conceal = ""
@@ -121,9 +122,8 @@ let g:tex_comment_nospell = 1
 " substitute in all lines
 nmap <C-s> :%s/
 
-nmap W :w<CR>
-nmap WW :wq<CR>
 nmap Q :q<CR>
+nnoremap ; :
 
 nmap PL :set spell spelllang=pl<CR>
 nmap EN :set spell spelllang=en<CR>
