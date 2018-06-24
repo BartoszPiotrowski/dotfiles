@@ -123,7 +123,11 @@ let g:tex_comment_nospell = 1
 nmap <C-s> :%s/
 
 nmap Q :q<CR>
+"nmap Z :w<CR>
+"nmap ZZ :wq<CR>
 nnoremap ; :
+inoremap <Esc> <Esc>`^:w<CR>
+"nnoremap <Esc> <Esc>:w<CR>
 
 nmap PL :set spell spelllang=pl<CR>
 nmap EN :set spell spelllang=en<CR>
