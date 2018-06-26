@@ -118,7 +118,7 @@ set gdefault
 nnoremap <space> :nohlsearch<CR>
 
 " Vimtex compile shortcut
-nmap T :VimtexCompile<CR>
+" nmap T :VimtexCompile<CR>
 
 
 let g:tex_flavor = "latex"
@@ -130,15 +130,14 @@ let g:tex_comment_nospell = 1
 " substitute in all lines
 nmap <C-s> :%s/
 
-nmap Q :q<CR>
 nmap Z :w<CR>
 nmap ZZ :wq<CR>
 nnoremap ; :
 "inoremap <Esc> <Esc>`^:w<CR>
 "nnoremap <Esc> <Esc>:w<CR>
 
-nmap PL :set spell spelllang=pl<CR>
-nmap EN :set spell spelllang=en<CR>
+" nmap PL :set spell spelllang=pl<CR>
+" nmap EN :set spell spelllang=en<CR>
 
 " Abbreviations
 "iab wtw wtedy i tylko wtedy, gdy
