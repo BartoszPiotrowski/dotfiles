@@ -39,6 +39,8 @@ set relativenumber
 highlight LineNr ctermfg=DarkGrey ctermbg=NONE
 highlight CursorLineNr ctermfg=DarkGrey ctermbg=NONE
 
+set scrolloff=15
+
 " Disable Arrow keys in Escape mode
 " map <up> <nop>
 " map <down> <nop>
@@ -64,6 +66,12 @@ highlight CursorLineNr ctermfg=DarkGrey ctermbg=NONE
 
 
 set rulerformat=%50(%#Bold#\ %-t\ %m\ %#Bold#\ %4(%l:%c%V%)\ %k\ %4p%%%)
+
+" easier moving between panes in vimdiff
+nnoremap <C-J> <C-W>j
+nnoremap <C-K> <C-W>k
+nnoremap <C-H> <C-W>h
+nnoremap <C-L> <C-W>l
 
 
 set breakindent
