@@ -151,7 +151,7 @@ pep () {
 	autopep8 -aaaaaaaaaaaaaaaaaa $1 --in-place
 }
 
-alias vim='f() {vim $1 && clear};f'
+#alias vim='f() {vim $1 && clear};f'
 alias z='f() {(zathura $1 &)};f'
 alias zz='f() {(zathura $1 &) && exit};f'
 #alias zn='f() {(zathura $1 &) && (vim $HOME"/Dropbox/reading_notes/"$(basename $1 .pdf)"__NOTES.md")};f'
@@ -179,26 +179,6 @@ alias bbp="vim ~/PhD/NOTES/BOOKS-queue.md"
 alias pps="vim ~/PhD/NOTES/PAPERS-summaries.md"
 alias ppq="vim ~/PhD/NOTES/PAPERS-queue.md"
 alias hh="vim ~/Documents/homepage.html"
-
-alias z600="ssh -t bp319501@students.mimuw.edu.pl ssh bartosz@10.3.5.247"
-alias grid01="ssh bartosz@grid01.ciirc.cvut.cz"
-alias grid03="ssh piotrbar@grid.ciirc.cvut.cz"
-alias grid04="ssh -t piotrbar@grid.ciirc.cvut.cz ssh 10.35.125.53"
-alias grid05="ssh -t piotrbar@grid.ciirc.cvut.cz ssh 10.35.125.54"
-alias grid06="ssh -t piotrbar@grid.ciirc.cvut.cz ssh 10.35.125.50"
-alias grid07="ssh -t piotrbar@grid.ciirc.cvut.cz ssh 10.35.125.55"
-alias grid08="ssh -t piotrbar@grid.ciirc.cvut.cz ssh 10.35.125.56"
-alias grid09="ssh -t piotrbar@grid.ciirc.cvut.cz ssh 10.35.125.57"
-alias grid10="ssh -t piotrbar@grid.ciirc.cvut.cz ssh 10.35.125.58"
-alias grid11="ssh -t piotrbar@grid.ciirc.cvut.cz ssh 10.35.125.59"
-alias grid12="ssh -t piotrbar@grid.ciirc.cvut.cz ssh 10.35.125.60"
-alias grid13="ssh -t piotrbar@grid.ciirc.cvut.cz ssh 10.35.125.61"
-alias grid14="ssh -t piotrbar@grid.ciirc.cvut.cz ssh 10.35.125.62"
-alias air01="ssh -t bartosz@grid01.ciirc.cvut.cz ssh 10.35.125.68"
-alias duch="ssh bp319501@duch.mimuw.edu.pl"
-alias students="ssh bp319501@students.mimuw.edu.pl"
-alias icm="ssh bartosz@login.icm.edu.pl"
-alias home="ssh serwer1766398@serwer1766398.home.pl"
 
 alias sls="screen -ls"
 alias sr="screen -r"
@@ -229,6 +209,27 @@ mcd () {
     mkdir -p $1
     cd $1
 }
+
+
+alias z600="ssh -t bp319501@students.mimuw.edu.pl ssh bartosz@10.3.5.247"
+alias grid01="ssh bartosz@grid01.ciirc.cvut.cz"
+alias grid03="ssh piotrbar@grid.ciirc.cvut.cz"
+alias grid04="ssh -t piotrbar@grid.ciirc.cvut.cz ssh 10.35.125.53"
+alias grid05="ssh -t piotrbar@grid.ciirc.cvut.cz ssh 10.35.125.54"
+alias grid06="ssh -t piotrbar@grid.ciirc.cvut.cz ssh 10.35.125.50"
+alias grid07="ssh -t piotrbar@grid.ciirc.cvut.cz ssh 10.35.125.55"
+alias grid08="ssh -t piotrbar@grid.ciirc.cvut.cz ssh 10.35.125.56"
+alias grid09="ssh -t piotrbar@grid.ciirc.cvut.cz ssh 10.35.125.57"
+alias grid10="ssh -t piotrbar@grid.ciirc.cvut.cz ssh 10.35.125.58"
+alias grid11="ssh -t piotrbar@grid.ciirc.cvut.cz ssh 10.35.125.59"
+alias grid12="ssh -t piotrbar@grid.ciirc.cvut.cz ssh 10.35.125.60"
+alias grid13="ssh -t piotrbar@grid.ciirc.cvut.cz ssh 10.35.125.61"
+alias grid14="ssh -t piotrbar@grid.ciirc.cvut.cz ssh 10.35.125.62"
+alias air01="ssh -t bartosz@grid01.ciirc.cvut.cz ssh 10.35.125.68"
+alias duch="ssh bp319501@duch.mimuw.edu.pl"
+alias students="ssh bp319501@students.mimuw.edu.pl"
+alias icm="ssh bartosz@login.icm.edu.pl"
+alias home="ssh serwer1766398@serwer1766398.home.pl"
 
 #so as not to be disturbed by Ctrl-S Ctrl-Q in terminals:
 stty -ixon
