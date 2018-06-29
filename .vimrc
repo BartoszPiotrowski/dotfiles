@@ -130,14 +130,13 @@ let g:tex_comment_nospell = 1
 " substitute in all lines
 nmap <C-s> :%s/
 
-nmap <C-w> :w<CR>
 nmap <C-q> :q<CR>
+nmap <C-w> :w<CR>
 nmap <C-x> :x<CR>
-
-nnoremap ; :
-
 "inoremap <Esc> <Esc>`^:w<CR>
 "nnoremap <Esc> <Esc>:w<CR>
+
+nnoremap ; :
 
 " nmap PL :set spell spelllang=pl<CR>
 " nmap EN :set spell spelllang=en<CR>
