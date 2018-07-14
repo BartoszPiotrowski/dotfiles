@@ -136,7 +136,7 @@ nmap <C-x> :x<CR>
 "inoremap <Esc> <Esc>`^:w<CR>
 "nnoremap <Esc> <Esc>:w<CR>
 
-nnoremap ; :
+"nnoremap ; :
 
 " nmap PL :set spell spelllang=pl<CR>
 " nmap EN :set spell spelllang=en<CR>
