@@ -162,6 +162,8 @@ nmap <C-x> :x<CR>
 autocmd FileType plaintex,tex call ModeTex()
 
 function! ModeTex()
+	nmap <C-a> :w<CR> :! pdflatex %<CR>
+
 	iab FR \begin{frame}<CR>\end{frame}<CR><Up><CR><Up><Tab><C-R><CR>
 	iab SL \begin{frame}<CR>\end{frame}<CR><Up><CR><Up><Tab><C-R><CR>
 	iab IT \begin{itemize}<CR>\end{itemize}<CR><Up><CR><Up><Tab><C-R><CR>
