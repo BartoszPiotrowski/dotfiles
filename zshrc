@@ -4,7 +4,6 @@ export ZSH=/home/bartosz/.oh-my-zsh
 export EPROVER=/home/bartosz/PhD/E/PROVER/eprover
 alias eprover="/home/bartosz/PhD/E/PROVER/eprover"
 
-
 # Vim key bindings
 bindkey -v
 export KEYTIMEOUT=1
@@ -49,7 +48,8 @@ COMPLETION_WAITING_DOTS="true"
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
+# Which plugins would you like to load?
+# (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
@@ -167,7 +167,6 @@ alias tt="vim ~/Notes/TODO.md"
 alias nn="vim ~/Notes/NOTES.md"
 alias ttc="vim ~/Notes/TODO-computer.md"
 alias ss="vim ~/Notes/TODO-sidestudy.md"
-alias bb="vim ~/Notes/books.md"
 alias ww="vim ~/Notes/parole.md"
 alias wwe="vim ~/Notes/parole_en.md"
 alias wwl="vim ~/Notes/parole_lt.md"
@@ -175,7 +174,6 @@ alias wwc="vim ~/Notes/parole_cz.md"
 alias gge="vim ~/Notes/english_grammar_notes.md"
 alias ttp="vim ~/PhD/NOTES/TODO.md"
 alias nnp="vim ~/PhD/NOTES/NOTES.md"
-alias bbp="vim ~/PhD/NOTES/BOOKS-queue.md"
 alias pps="vim ~/PhD/NOTES/PAPERS-summaries.md"
 alias ppq="vim ~/PhD/NOTES/PAPERS-queue.md"
 alias hh="vim ~/Documents/homepage.html"
