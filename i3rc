@@ -3,7 +3,6 @@
 #
 # Should you change your keyboard layout some time, delete
 # this file and re-run i3-config-wizard(1).
-#
 
 # i3 config file (v4)
 #
@@ -73,11 +72,6 @@ bindsym $mod+Escape kill
 
 # xfce settings
 bindsym $mod+Shift+s exec xfce4-settings-manager
-
-# ssh to grid01/03/05... in a new terminal
-bindsym $mod+y exec xfce4-terminal -exec 'ssh bartosz@grid01.ciirc.cvut.cz'
-bindsym $mod+u exec xfce4-terminal -exec 'ssh piotrbar@grid.ciirc.cvut.cz'
-bindsym $mod+i exec xfce4-terminal -exec 'ssh -t piotrbar@grid.ciirc.cvut.cz ssh 10.35.125.54'
 
 # start dmenu (a program launcher)
 #bindsym $mod+d exec dmenu_run
@@ -223,9 +217,10 @@ bar {
 	colors {
 	    background #002b36
 	    statusline #ffffff
-	    separator #666666
+	    separator #d33682
+	    #separator #666666
 
-	    focused_workspace  #008fff #007fff #ffffff
+	    focused_workspace  #d33682 #d33682 #ffffff
 	    active_workspace   #333333 #5f676a #ffffff
 	    inactive_workspace #333333 #222222 #888888
 	    urgent_workspace   #aa0000 #990000 #ffffff
@@ -234,9 +229,6 @@ bar {
 #	mode dock
 	status_command i3status
 }
-
-
-
 
 #### RULES FOR SPECIFIC APPLICATIONS ####
 
