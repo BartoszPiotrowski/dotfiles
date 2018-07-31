@@ -161,7 +161,7 @@ nmap <C-x> :x<CR>
 
 
 " Define specific options for some file types
-" autocmd FileType plaintex,tex call ModeTex()
+autocmd FileType plaintex,tex call ModeTex()
 
 function! ModeTex()
 	nmap <C-a> :w<CR> :! pdflatex %<CR>
