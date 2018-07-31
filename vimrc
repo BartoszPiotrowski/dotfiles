@@ -122,10 +122,12 @@ nnoremap <space> :nohlsearch<CR>
 
 
 let g:tex_flavor = "latex"
-let g:tex_fast = "cmMprs"
+let g:tex_fast = "cmMprsS"
 let g:tex_conceal = ""
-let g:tex_fold_enabled = 0
+" let g:tex_fold_enabled = 0 -- this makes vim slow!!!
 let g:tex_comment_nospell = 1
+" here some advice if vim with tex slow:
+" http://vim.1045645.n5.nabble.com/Slow-Syntax-Highlighting-with-Latex-td5716260.html
 
 " substitute in all lines
 nmap <C-s> :%s/
@@ -159,7 +161,7 @@ nmap <C-x> :x<CR>
 
 
 " Define specific options for some file types
-autocmd FileType plaintex,tex call ModeTex()
+" autocmd FileType plaintex,tex call ModeTex()
 
 function! ModeTex()
 	nmap <C-a> :w<CR> :! pdflatex %<CR>
