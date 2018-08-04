@@ -129,6 +129,8 @@ let g:tex_comment_nospell = 1
 " here some advice if vim with tex slow:
 " http://vim.1045645.n5.nabble.com/Slow-Syntax-Highlighting-with-Latex-td5716260.html
 
+nmap <CR> gql
+
 " substitute in all lines
 nmap <C-s> :%s/
 
