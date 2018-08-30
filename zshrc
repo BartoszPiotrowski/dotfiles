@@ -167,6 +167,7 @@ alias tt="vim ~/Notes/TODO.md"
 alias nn="vim ~/Notes/NOTES.md"
 alias ttc="vim ~/Notes/TODO-computer.md"
 alias ss="vim ~/Notes/TODO-sidestudy.md"
+alias tts="vim ~/Notes/TODO-sidestudy.md"
 alias ww="vim ~/Notes/parole.md"
 alias wwe="vim ~/Notes/parole_en.md"
 alias wwl="vim ~/Notes/parole_lt.md"
@@ -220,8 +221,9 @@ alias zzff='f(){(zathura $(ff $1) &) && exit};f'
 alias zzfff='f(){(zathura $(fff $1) &) && exit};f'
 
 # grep lines containing regexp pattern in all non-binary files in current
-# directory (and its subdirectories, recursively); ignore case (-i)
-alias gg='grep -rnIi . -e'
+# directory (and its subdirectories, recursively)
+alias gg='grep -rnI . -e'
+alias gg='grep -rnIi . -e' # ignore case (-i)
 
 mcd () {
     mkdir -p $1
