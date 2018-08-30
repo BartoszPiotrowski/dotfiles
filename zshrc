@@ -223,7 +223,7 @@ alias zzfff='f(){(zathura $(fff $1) &) && exit};f'
 # grep lines containing regexp pattern in all non-binary files in current
 # directory (and its subdirectories, recursively)
 alias gg='grep -rnI . -e'
-alias gg='grep -rnIi . -e' # ignore case (-i)
+alias ggi='grep -rnIi . -e' # ignore case (-i)
 
 mcd () {
     mkdir -p $1
