@@ -77,6 +77,8 @@ nnoremap <C-L> <C-W>l
 set breakindent
 set linebreak
 set showbreak=>
+set tabstop=4
+set shiftwidth=4
 
 au BufNewFile,BufRead *.py
     \ set tabstop=8 |
