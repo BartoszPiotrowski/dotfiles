@@ -91,6 +91,7 @@ au BufNewFile,BufRead *.py
 
 let g:ycm_global_ycm_extra_conf = '/usr/share/vim/vimfiles/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
 let g:ycm_server_python_interpreter = '/usr/bin/python2'
+let g:ycm_filetype_blacklist = {}
 " let g:ycm_autoclose_preview_window_after_completion=1
 " let g:ycm_autoclose_preview_window_after_insertion = 1
 set completeopt-=preview
