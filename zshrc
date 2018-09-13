@@ -179,6 +179,9 @@ alias pps="vim ~/PhD/NOTES/PAPERS-summaries.md"
 alias ppq="vim ~/PhD/NOTES/PAPERS-queue.md"
 alias hh="vim ~/Documents/homepage.html"
 
+alias v="vim"
+alias vi="vim"
+
 alias z600="ssh -t bp319501@students.mimuw.edu.pl ssh bartosz@10.3.5.247"
 alias grid01="ssh bartosz@grid01.ciirc.cvut.cz"
 alias grid03="ssh piotrbar@grid.ciirc.cvut.cz"
