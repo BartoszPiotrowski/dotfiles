@@ -211,6 +211,7 @@ alias py3="python3"
 alias py2="python2"
 
 alias sa="source activate"
+alias sd="source deactivate"
 
 alias duh="du -h -d 1 | sort -hr"
 alias unlock='sudo rm /var/lib/pacman/db.lck'
