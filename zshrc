@@ -210,6 +210,8 @@ alias py="python3"
 alias py3="python3"
 alias py2="python2"
 
+alias sa="source activate"
+
 alias duh="du -h -d 1 | sort -hr"
 alias unlock='sudo rm /var/lib/pacman/db.lck'
 
@@ -236,4 +238,8 @@ mcd () {
 #so as not to be disturbed by Ctrl-S Ctrl-Q in terminals:
 stty -ixon
 
+# Mizar
 export MIZFILES="/usr/local/share/mizar"
+
+# Anaconda
+export PATH=/home/bartosz/opt/anaconda/bin:$PATH
