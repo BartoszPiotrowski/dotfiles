@@ -257,6 +257,14 @@ alias ss="screen -S"
 
 alias py="python3"
 
+alias sa="source activate"
+
 alias sls="screen -ls"
 alias sr="screen -r"
 alias sS="screen -S"
+
+#export WORKON_HOME=$HOME/.virtualenvs
+#export PROJECT_HOME=$HOME
+#export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
+#source $HOME/.local/bin/virtualenvwrapper.sh
+export PATH=/home/piotrbar/opt/anaconda3/bin:$PATH
