@@ -243,4 +243,4 @@ stty -ixon
 export MIZFILES="/usr/local/share/mizar"
 
 # Anaconda
-export PATH=/home/bartosz/opt/anaconda/bin:$PATH
+export PATH=/home/bartosz/opt/anaconda3/bin:$PATH
