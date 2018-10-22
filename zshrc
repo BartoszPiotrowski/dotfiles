@@ -142,10 +142,14 @@ alias bbp="rsync -av \
 --exclude '*Trash*' \
 ~/PhD/ /run/media/bartosz/BACKUPSTICK/PhD/"
 
-alias u="yaourt -Syyuu --noconfirm"
-alias s="yaourt -Ss"
-alias i="yaourt -S"
+alias u="sudo pacman -Syyuu --noconfirm"
+alias s="sudo pacman -Ss"
+alias i="sudo pacman -S"
 alias id="pacman -Qs"
+
+alias uy="yaourt -Syyuu --noconfirm"
+alias sy="yaourt -Ss"
+alias iy="yaourt -S"
 
 pep () {
 	autopep8 -aaaaaaaaaaaaaaaaaa $1 --in-place
