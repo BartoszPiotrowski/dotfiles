@@ -161,7 +161,6 @@ alias zz='f() {(zathura $1 &) && exit};f'
 #alias zn='f() {(zathura $1 &) && (vim $HOME"/Dropbox/reading_notes/"$(basename $1 .pdf)"__NOTES.md")};f'
 alias zn='f() {(zathura $1".pdf" &) && (vim $1"__NOTES.md")};f'
 
-
 alias vn=viewnior
 
 _editor_fts=(cpp cxx cc c hh h inl asc txt TXT tex md py)
@@ -234,6 +233,8 @@ alias zzfff='f(){(zathura $(fff $1) &) && exit};f'
 # directory (and its subdirectories, recursively)
 alias gg='grep -rnI . -e'
 alias ggi='grep -rnIi . -e' # ignore case (-i)
+alias gpar='f(){echo; awk "/$1/" RS="\n\n" ORS="\n\n" $2};f'
+
 
 mcd () {
     mkdir -p $1
