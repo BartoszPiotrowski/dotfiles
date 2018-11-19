@@ -151,6 +151,11 @@ alias uy="yaourt -Syyuu --noconfirm"
 alias sy="yaourt -Ss"
 alias iy="yaourt -S"
 
+alias lswifi="nmcli dev wifi list"
+alias wifils="lswifi"
+alias wifi="nmcli dev wifi con"
+alias wificon="wifi"
+
 pep () {
 	autopep8 -aaaaaaaaaaaaaaaaaa $1 --in-place
 }
