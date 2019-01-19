@@ -175,12 +175,15 @@ iab boo bez utraty ogólności
 autocmd FileType plaintex,tex call ModeTex()
 
 function! ModeTex()
-	nmap <C-a> :w<CR> :! pdflatex %<CR>
+	nmap <C-a> :w<CR> :! pdflatexclean %<CR>
 
 	inoremap <buffer> FR \begin{frame}<CR>\end{frame}<Esc>k
 	inoremap <buffer> SL \begin{frame}<CR>\end{frame}<Esc>k
 	inoremap <buffer> BL \begin{block}<CR>\end{block}<Esc>k
 	inoremap <buffer> EQ \begin{equation}<CR>\end{equation}<Esc>O
+	inoremap <buffer> DF \begin{df}<CR>\end{df}<Esc>O
+	inoremap <buffer> TH \begin{thm}<CR>\end{thm}<Esc>O
+	inoremap <buffer> PR \begin{proof}<CR>\end{proof}<Esc>O
 	inoremap <buffer> AL \begin{align*}<CR>\end{align*}<Esc>k
 	inoremap <buffer> IT \begin{itemize}<CR>\end{itemize}<Esc>O\item<CR>\item<Up><Space>
  	inoremap <buffer> EN \begin{enumerate}<CR>\end{enumerate}<Esc>O\item<CR>\item<Up><Space>

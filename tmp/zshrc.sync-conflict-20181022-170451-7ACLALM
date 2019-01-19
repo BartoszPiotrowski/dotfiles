@@ -4,7 +4,6 @@ export ZSH=/home/bartosz/.oh-my-zsh
 export EPROVER=/home/bartosz/PhD/E/PROVER/eprover
 alias eprover="/home/bartosz/PhD/E/PROVER/eprover"
 
-
 # Vim key bindings
 bindkey -v
 export KEYTIMEOUT=1
@@ -80,8 +79,6 @@ __git_files () {
 #   export EDITOR='mvim'
 # fi
 export EDITOR='vim'
-alias v="vim"
-alias vi="vim"
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -154,11 +151,6 @@ alias uy="yaourt -Syyuu --noconfirm"
 alias sy="yaourt -Ss"
 alias iy="yaourt -S"
 
-alias lswifi="nmcli dev wifi list"
-alias wifils="lswifi"
-alias wifi="nmcli dev wifi con"
-alias wificon="wifi"
-
 pep () {
 	autopep8 -aaaaaaaaaaaaaaaaaa $1 --in-place
 }
@@ -169,27 +161,30 @@ alias zz='f() {(zathura $1 &) && exit};f'
 #alias zn='f() {(zathura $1 &) && (vim $HOME"/Dropbox/reading_notes/"$(basename $1 .pdf)"__NOTES.md")};f'
 alias zn='f() {(zathura $1".pdf" &) && (vim $1"__NOTES.md")};f'
 
+
 alias vn=viewnior
 
 _editor_fts=(cpp cxx cc c hh h inl asc txt TXT tex md py)
 for ft in $_editor_fts ; do alias -s $ft=$EDITOR ; done
 
-alias tt="vim ~/Notes/TODO.md; clear"
-alias nn="vim ~/Notes/NOTES.md; clear"
-alias ttc="vim ~/Notes/TODO-computer.md; clear"
-alias ss="vim ~/Notes/TODO-sidestudy.md; clear"
-alias tts="vim ~/Notes/TODO-sidestudy.md; clear"
-alias ww="vim ~/Notes/parole.md; clear"
-alias wwe="vim ~/Notes/parole_en.md; clear"
-alias wwl="vim ~/Notes/parole_lt.md; clear"
-alias wwc="vim ~/Notes/parole_cz.md; clear"
-alias gge="vim ~/Notes/english_grammar_notes.md; clear"
-alias ttp="vim ~/PhD/NOTES/TODO.md; clear"
-alias nnp="vim ~/PhD/NOTES/NOTES.md; clear"
-alias pps="vim ~/PhD/NOTES/PAPERS-summaries.md; clear"
-alias ppq="vim ~/PhD/NOTES/PAPERS-queue.md; clear"
-alias hh="vim ~/Documents/homepage.html; clear"
+alias tt="vim ~/Notes/TODO.md"
+alias nn="vim ~/Notes/NOTES.md"
+alias ttc="vim ~/Notes/TODO-computer.md"
+alias ss="vim ~/Notes/TODO-sidestudy.md"
+alias tts="vim ~/Notes/TODO-sidestudy.md"
+alias ww="vim ~/Notes/parole.md"
+alias wwe="vim ~/Notes/parole_en.md"
+alias wwl="vim ~/Notes/parole_lt.md"
+alias wwc="vim ~/Notes/parole_cz.md"
+alias gge="vim ~/Notes/english_grammar_notes.md"
+alias ttp="vim ~/PhD/NOTES/TODO.md"
+alias nnp="vim ~/PhD/NOTES/NOTES.md"
+alias pps="vim ~/PhD/NOTES/PAPERS-summaries.md"
+alias ppq="vim ~/PhD/NOTES/PAPERS-queue.md"
+alias hh="vim ~/Documents/homepage.html"
 
+alias v="vim"
+alias vi="vim"
 
 alias z600="ssh -t bp319501@students.mimuw.edu.pl ssh bartosz@10.3.5.247"
 alias grid01="ssh bartosz@grid01.ciirc.cvut.cz"
@@ -239,9 +234,6 @@ alias zzfff='f(){(zathura $(fff $1) &) && exit};f'
 # directory (and its subdirectories, recursively)
 alias gg='grep -rnI . -e'
 alias ggi='grep -rnIi . -e' # ignore case (-i)
-alias gpar='f(){echo; awk "/$1/" RS="\n\n" ORS="\n\n" $2};f'
-
-alias wgetdir='wget -r -np -nH -R "index.html*"'
 
 mcd () {
     mkdir -p $1
@@ -255,4 +247,4 @@ stty -ixon
 export MIZFILES="/usr/local/share/mizar"
 
 # Anaconda
-export PATH=/home/bartosz/opt/anaconda3/bin:$PATH
+export PATH=/home/bartosz/opt/anaconda/bin:$PATH
