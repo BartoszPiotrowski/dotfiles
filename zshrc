@@ -145,6 +145,8 @@ alias bbp="rsync -av \
 --exclude '*Trash*' \
 ~/PhD/ /run/media/bartosz/BACKUPSTICK/PhD/"
 
+alias gtop="watch -n 0.5 nvidia-smi"
+
 alias u="sudo pacman -Syyuu --noconfirm"
 alias s="sudo pacman -Ss"
 alias i="sudo pacman -S"
@@ -175,6 +177,7 @@ _editor_fts=(cpp cxx cc c hh h inl asc txt TXT tex md py)
 for ft in $_editor_fts ; do alias -s $ft=$EDITOR ; done
 
 alias tt="vim ~/Notes/TODO.md; clear"
+alias db="vim ~/Notes/daily-basis.md; clear"
 alias nn="vim ~/Notes/NOTES.md; clear"
 alias ttc="vim ~/Notes/TODO-computer.md; clear"
 alias ss="vim ~/Notes/TODO-sidestudy.md; clear"
@@ -219,8 +222,10 @@ alias py="python3"
 alias py3="python3"
 alias py2="python2"
 
-alias sa="source activate"
-alias sd="source deactivate"
+#alias sa="source activate"
+#alias sd="source deactivate"
+
+alias sa='f() {source ~/envs/$1/bin/activate};f'
 
 alias duh="du -h -d 1 | sort -hr"
 alias unlock='sudo rm /var/lib/pacman/db.lck'
@@ -240,6 +245,7 @@ alias zzfff='f(){(zathura $(fff $1) &) && exit};f'
 alias gg='grep -rnI . -e'
 alias ggi='grep -rnIi . -e' # ignore case (-i)
 alias gpar='f(){echo; awk "/$1/" RS="\n\n" ORS="\n\n" $2};f'
+alias pdfgrep='pdfgrep -n'
 
 alias wgetdir='wget -r -np -nH -R "index.html*"'
 
@@ -255,4 +261,12 @@ stty -ixon
 export MIZFILES="/usr/local/share/mizar"
 
 # Anaconda
-export PATH=/home/bartosz/opt/anaconda3/bin:$PATH
+#export PATH=/home/bartosz/opt/anaconda3/bin:$PATH
+
+TIMEFMT='%J   %U  user %S system %P cpu %*E total'$'\n'\
+'avg shared (code):         %X KB'$'\n'\
+'avg unshared (data/stack): %D KB'$'\n'\
+'total (sum):               %K KB'$'\n'\
+'max memory:                %M MB'$'\n'\
+'page faults from disk:     %F'$'\n'\
+'other page faults:         %R'
