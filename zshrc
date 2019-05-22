@@ -1,8 +1,8 @@
 # Path to your oh-my-zsh installation.
 export ZSH=/home/bartosz/.oh-my-zsh
 
-export EPROVER=/home/bartosz/PhD/E/PROVER/eprover
-alias eprover="/home/bartosz/PhD/E/PROVER/eprover"
+export EPROVER=/home/bartosz/opt/E/PROVER/eprover
+alias eprover="/home/bartosz/opt/E/PROVER/eprover"
 
 
 # Vim key bindings
@@ -83,6 +83,8 @@ export EDITOR='vim'
 alias v="vim"
 alias vi="vim"
 
+alias rr="ranger"
+
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
@@ -99,17 +101,12 @@ alias vi="vim"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
 
-alias bb="rsync -av \
---exclude 'tmp*' \
---exclude 'Videos' \
---exclude 'Music' \
---exclude 'Pictures' \
---exclude 'Downloads' \
---exclude 'R' \
---exclude 'E' \
---exclude '.cache' \
---exclude '*Trash*' \
-~/ /run/media/bartosz/BACKUPSTICK/"
+alias bb="
+cd /run/media/bartosz/DATADRIVE1/BACKUPS;
+mkdir HOME-PARTIAL;
+rsync -av ~/ HOME-PARTIAL;
+mv HOME-PARTIAL HOME-`date +%F`
+"
 
 # rsync will delete files not present in ~/
 alias bbd="rsync -av --delete \
@@ -152,6 +149,8 @@ alias s="sudo pacman -Ss"
 alias i="sudo pacman -S"
 alias id="pacman -Qs"
 
+alias pi="sudo pip install"
+
 alias uy="yaourt -Syyuu --noconfirm"
 alias sy="yaourt -Ss"
 alias iy="yaourt -S"
@@ -178,15 +177,15 @@ for ft in $_editor_fts ; do alias -s $ft=$EDITOR ; done
 
 alias tt="vim ~/Notes/TODO.md; clear"
 alias db="vim ~/Notes/daily-basis.md; clear"
-alias nn="vim ~/Notes/NOTES.md; clear"
+alias nn="vim ~/Notes/NOTES.notes; clear"
 alias ttc="vim ~/Notes/TODO-computer.md; clear"
 alias ss="vim ~/Notes/TODO-sidestudy.md; clear"
 alias tts="vim ~/Notes/TODO-sidestudy.md; clear"
 alias ww="vim ~/Notes/parole.md; clear"
-alias wwe="vim ~/Notes/parole_en.md; clear"
-alias wwl="vim ~/Notes/parole_lt.md; clear"
-alias wwc="vim ~/Notes/parole_cz.md; clear"
-alias gge="vim ~/Notes/english_grammar_notes.md; clear"
+alias wwe="vim ~/Notes/parole-en.md; clear"
+alias wwl="vim ~/Notes/parole-lt.md; clear"
+alias wwc="vim ~/Notes/parole-cz.md; clear"
+alias gge="vim ~/Notes/english-grammar-notes.md; clear"
 alias ttp="vim ~/PhD/NOTES/TODO.md; clear"
 alias nnp="vim ~/PhD/NOTES/NOTES.md; clear"
 alias pps="vim ~/PhD/NOTES/PAPERS-summaries.md; clear"
@@ -263,6 +262,9 @@ export MIZFILES="/usr/local/share/mizar"
 # Anaconda
 #export PATH=/home/bartosz/opt/anaconda3/bin:$PATH
 
+# R
+export R_LIBS="~/opt/R/"
+
 TIMEFMT='%J   %U  user %S system %P cpu %*E total'$'\n'\
 'avg shared (code):         %X KB'$'\n'\
 'avg unshared (data/stack): %D KB'$'\n'\
@@ -270,3 +272,8 @@ TIMEFMT='%J   %U  user %S system %P cpu %*E total'$'\n'\
 'max memory:                %M MB'$'\n'\
 'page faults from disk:     %F'$'\n'\
 'other page faults:         %R'
+
+
+# Temporary aliases
+alias sid="cd PhD/TEACHING/SID/"
+alias sad="cd PhD/TEACHING/SAD/"

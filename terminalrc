@@ -9,14 +9,14 @@ MiscInheritGeometry=FALSE
 MiscMenubarDefault=FALSE
 MiscMouseAutohide=TRUE
 MiscToolbarDefault=FALSE
-MiscConfirmClose=TRUE
+MiscConfirmClose=FALSE
 MiscCycleTabs=TRUE
 MiscTabCloseButtons=TRUE
 MiscTabCloseMiddleClick=TRUE
 MiscTabPosition=GTK_POS_TOP
 MiscHighlightUrls=TRUE
 ScrollingLines=999999
-BackgroundDarkness=0.000000
+BackgroundDarkness=0,000000
 ScrollingOnOutput=FALSE
 FontName=Droid Sans Mono 14
 ScrollingBar=TERMINAL_SCROLLBAR_NONE
@@ -35,4 +35,7 @@ MiscSlimTabs=FALSE
 ColorCursorUseDefault=FALSE
 ColorCursorForeground=#555557575353
 WordChars=-A-Za-z0-9./%&#_=+@~
+MiscShowRelaunchDialog=TRUE
+MiscNewTabAdjacent=FALSE
+ScrollingUnlimited=TRUE
 

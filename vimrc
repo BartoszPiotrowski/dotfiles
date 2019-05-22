@@ -10,16 +10,17 @@ Plugin 'gmarik/Vundle.vim'
 
 " Plugins
 " Plugin 'scrooloose/syntastic'
+"-- YCM better installed via yaourt
+Plugin 'Valloric/YouCompleteMe'
 Plugin 'vim-scripts/indentpython.vim'
 "Plugin 'jiangmiao/auto-pairs'
 "Plugin 'auto-pairs-gentle'
 Plugin 'chriskempson/base16-vim'
-"Plugin 'altercation/vim-colors-solarized'
-"Plugin 'Valloric/YouCompleteMe' -- installed via yaourt
+Plugin 'altercation/vim-colors-solarized'
 "Plugin 'lervag/vimtex'
 Plugin 'tpope/vim-surround'
 Plugin 'git@github.com:hdima/python-syntax.git'
-Plugin 'godlygeek/tabular'
+"Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 "Plugin 'vim-airline/vim-airline'
 "Plugin 'vim-airline/vim-airline-themes'
@@ -29,9 +30,20 @@ call vundle#end()
 syntax enable
 filetype plugin indent on
 let python_highlight_all = 1
-"let g:solarized_termcolors=256
+
+let g:ycm_path_to_python_interpreter = '/usr/bin/python'
+let g:ycm_server_python_interpreter = '/usr/bin/python'
+let g:ycm_global_ycm_extra_conf = '/usr/share/vim/vimfiles/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
+let g:ycm_filetype_blacklist = {}
+" let g:ycm_autoclose_preview_window_after_completion=1
+" let g:ycm_autoclose_preview_window_after_insertion = 1
+set completeopt-=preview
+
 set background=dark
+colorscheme solarized
 colorscheme base16-solarized-dark
+"let g:solarized_termcolors=256
+"let g:solarized_termcolors=16
 
 let g:filetype_pl="prolog"
 
@@ -89,12 +101,6 @@ au BufNewFile,BufRead *.py
     \ set autoindent |
     \ set fileformat=unix |
 
-let g:ycm_global_ycm_extra_conf = '/usr/share/vim/vimfiles/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
-let g:ycm_server_python_interpreter = '/usr/bin/python3'
-let g:ycm_filetype_blacklist = {}
-" let g:ycm_autoclose_preview_window_after_completion=1
-" let g:ycm_autoclose_preview_window_after_insertion = 1
-set completeopt-=preview
 
 " copying to clipboard
 set clipboard=unnamedplus
@@ -173,9 +179,10 @@ iab boo bez utraty ogólności
 
 " Define specific options for some file types
 autocmd FileType plaintex,tex call ModeTex()
+autocmd FileType python setlocal formatprg=autopep8\ -
 
 function! ModeTex()
-	nmap <C-a> :w<CR> :! pdflatexclean %<CR>
+	nmap <C-a> :w<CR> :! pdflatex %<CR>
 
 	inoremap <buffer> FR \begin{frame}<CR>\end{frame}<Esc>k
 	inoremap <buffer> SL \begin{frame}<CR>\end{frame}<Esc>k
@@ -183,83 +190,93 @@ function! ModeTex()
 	inoremap <buffer> EQ \begin{equation}<CR>\end{equation}<Esc>O
 	inoremap <buffer> DF \begin{df}<CR>\end{df}<Esc>O
 	inoremap <buffer> TH \begin{thm}<CR>\end{thm}<Esc>O
-	inoremap <buffer> PR \begin{proof}<CR>\end{proof}<Esc>O
+	inoremap <buffer> TW \begin{tw}<CR>\end{tw}<Esc>O
+	inoremap <buffer> STW \begin{stw}<CR>\end{stw}<Esc>O
+	inoremap <buffer> WN \begin{wn}<CR>\end{wn}<Esc>O
+	inoremap <buffer> UW \begin{uw}<CR>\end{uw}<Esc>O
+	inoremap <buffer> FT \begin{fakt}<CR>\end{fakt}<Esc>O
+	inoremap <buffer> OBS \begin{obs}<CR>\end{obs}<Esc>O
+	inoremap <buffer> OZN \begin{ozn}<CR>\end{ozn}<Esc>O
+	inoremap <buffer> DW \begin{proof}<CR>\end{proof}<Esc>O
+	inoremap <buffer> PRZ \begin{prz}<CR>\end{prz}<Esc>O
 	inoremap <buffer> AL \begin{align*}<CR>\end{align*}<Esc>k
 	inoremap <buffer> IT \begin{itemize}<CR>\end{itemize}<Esc>O\item<CR>\item<Up><Space>
  	inoremap <buffer> EN \begin{enumerate}<CR>\end{enumerate}<Esc>O\item<CR>\item<Up><Space>
 
- 	iab E \exists \,<Left><Left><Left>
- 	iab F \forall \,<Left><Left><Left>
+ 	inoremap <buffer> EX \exists  \,<Left><Left><Left>
+ 	inoremap <buffer> FA \forall  \,<Left><Left><Left>
 
- 	iab \v \vee
- 	iab \w \wedge
- 	iab \V \bigvee_{}<Left>
- 	iab \W \bigwedge_{}<Left>
+ 	inoremap <buffer> TD {\color{red} TODO}<Esc>
 
- 	inoremap <buffer> $ $$<esc>i
+ 	"iab \v \vee
+ 	"iab \w \wedge
+ 	"iab \V \bigvee_{}<Left>
+ 	"iab \W \bigwedge_{}<Left>
 
- 	iab pr vdash
- 	iab md models
+ 	"inoremap <buffer> $ $$<esc>i
 
- 	iab x1n x_1, x_2, \ldots, x_n
- 	iab x0n x_0, x_1, \ldots, x_n
- 	iab y1n y_1, y_2, \ldots, y_n
- 	iab y0n y_0, y_1, \ldots, y_n
- 	iab k1n k_1, k_2, \ldots, k_n
- 	iab k0n k_0, k_1, \ldots, k_n
- 	iab l1n l_1, l_2, \ldots, l_n
- 	iab l0n l_0, l_1, \ldots, l_n
- 	iab a1n a_1, a_2, \ldots, a_n
- 	iab a0n a_0, a_1, \ldots, a_n
- 	iab b1n b_1, b_2, \ldots, b_n
- 	iab b0n b_0, b_1, \ldots, b_n
- 	iab p1n p_1, p_2, \ldots, p_n
- 	iab p0n p_0, p_1, \ldots, p_n
- 	iab q1n q_1, q_2, \ldots, q_n
- 	iab q0n q_0, q_1, \ldots, q_n
+ 	"iab pr vdash
+ 	"iab md models
 
- 	iab x1k x_1, x_2, \ldots, x_k
- 	iab x0k x_0, x_1, \ldots, x_k
- 	iab y1k y_1, y_2, \ldots, y_k
- 	iab y0k y_0, y_1, \ldots, y_k
- 	iab i1k i_1, i_2, \ldots, i_k
- 	iab i0k i_0, i_1, \ldots, i_k
- 	iab l1k l_1, l_2, \ldots, l_k
- 	iab l0k l_0, l_1, \ldots, l_k
- 	iab a1k a_1, a_2, \ldots, a_k
- 	iab a0k a_0, a_1, \ldots, a_k
- 	iab b1k b_1, b_2, \ldots, b_k
- 	iab b0k b_0, b_1, \ldots, b_k
- 	iab p1k p_1, p_2, \ldots, p_k
- 	iab p0k p_0, p_1, \ldots, p_k
- 	iab q1k q_1, q_2, \ldots, q_k
- 	iab q0k q_0, q_1, \ldots, q_k
+ 	"iab x1n x_1, x_2, \ldots, x_n
+ 	"iab x0n x_0, x_1, \ldots, x_n
+ 	"iab y1n y_1, y_2, \ldots, y_n
+ 	"iab y0n y_0, y_1, \ldots, y_n
+ 	"iab k1n k_1, k_2, \ldots, k_n
+ 	"iab k0n k_0, k_1, \ldots, k_n
+ 	"iab l1n l_1, l_2, \ldots, l_n
+ 	"iab l0n l_0, l_1, \ldots, l_n
+ 	"iab a1n a_1, a_2, \ldots, a_n
+ 	"iab a0n a_0, a_1, \ldots, a_n
+ 	"iab b1n b_1, b_2, \ldots, b_n
+ 	"iab b0n b_0, b_1, \ldots, b_n
+ 	"iab p1n p_1, p_2, \ldots, p_n
+ 	"iab p0n p_0, p_1, \ldots, p_n
+ 	"iab q1n q_1, q_2, \ldots, q_n
+ 	"iab q0n q_0, q_1, \ldots, q_n
 
- 	iab x1l x_1, x_2, \ldots, x_l
- 	iab x0l x_0, x_1, \ldots, x_l
- 	iab y1l y_1, y_2, \ldots, y_l
- 	iab y0l y_0, y_1, \ldots, y_l
- 	iab i1l i_1, i_2, \ldots, i_l
- 	iab i0l i_0, i_1, \ldots, i_l
- 	iab l1l l_1, l_2, \ldots, l_l
- 	iab l0l l_0, l_1, \ldots, l_l
- 	iab a1l a_1, a_2, \ldots, a_l
- 	iab a0l a_0, a_1, \ldots, a_l
- 	iab b1l b_1, b_2, \ldots, b_l
- 	iab b0l b_0, b_1, \ldots, b_l
- 	iab p1l p_1, p_2, \ldots, p_l
- 	iab p0l p_0, p_1, \ldots, p_l
- 	iab q1l q_1, q_2, \ldots, q_l
- 	iab q0l q_0, q_1, \ldots, q_l
+ 	"iab x1k x_1, x_2, \ldots, x_k
+ 	"iab x0k x_0, x_1, \ldots, x_k
+ 	"iab y1k y_1, y_2, \ldots, y_k
+ 	"iab y0k y_0, y_1, \ldots, y_k
+ 	"iab i1k i_1, i_2, \ldots, i_k
+ 	"iab i0k i_0, i_1, \ldots, i_k
+ 	"iab l1k l_1, l_2, \ldots, l_k
+ 	"iab l0k l_0, l_1, \ldots, l_k
+ 	"iab a1k a_1, a_2, \ldots, a_k
+ 	"iab a0k a_0, a_1, \ldots, a_k
+ 	"iab b1k b_1, b_2, \ldots, b_k
+ 	"iab b0k b_0, b_1, \ldots, b_k
+ 	"iab p1k p_1, p_2, \ldots, p_k
+ 	"iab p0k p_0, p_1, \ldots, p_k
+ 	"iab q1k q_1, q_2, \ldots, q_k
+ 	"iab q0k q_0, q_1, \ldots, q_k
 
- 	iab a_ \bar{a}
- 	iab b_ \bar{b}
- 	iab c_ \bar{c}
- 	iab x_ \bar{x}
- 	iab y_ \bar{y}
- 	iab z_ \bar{z}
- 	iab p_ \bar{p}
- 	iab q_ \bar{q}
+ 	"iab x1l x_1, x_2, \ldots, x_l
+ 	"iab x0l x_0, x_1, \ldots, x_l
+ 	"iab y1l y_1, y_2, \ldots, y_l
+ 	"iab y0l y_0, y_1, \ldots, y_l
+ 	"iab i1l i_1, i_2, \ldots, i_l
+ 	"iab i0l i_0, i_1, \ldots, i_l
+ 	"iab l1l l_1, l_2, \ldots, l_l
+ 	"iab l0l l_0, l_1, \ldots, l_l
+ 	"iab a1l a_1, a_2, \ldots, a_l
+ 	"iab a0l a_0, a_1, \ldots, a_l
+ 	"iab b1l b_1, b_2, \ldots, b_l
+ 	"iab b0l b_0, b_1, \ldots, b_l
+ 	"iab p1l p_1, p_2, \ldots, p_l
+ 	"iab p0l p_0, p_1, \ldots, p_l
+ 	"iab q1l q_1, q_2, \ldots, q_l
+ 	"iab q0l q_0, q_1, \ldots, q_l
+
+ 	"iab a_ \bar{a}
+ 	"iab b_ \bar{b}
+ 	"iab c_ \bar{c}
+ 	"iab x_ \bar{x}
+ 	"iab y_ \bar{y}
+ 	"iab z_ \bar{z}
+ 	"iab p_ \bar{p}
+ 	"iab q_ \bar{q}
 
 	"iab EQ \begin{equation}<CR>\end{equation}<CR><Up><CR><Up><Tab><C-R><CR>
 	"iab IT \begin{itemize}<CR>\end{itemize}<CR><Up><CR><Up><Tab><C-R><CR>
@@ -284,4 +301,5 @@ function! ModeTex()
 "	iab eq \[<CR>\]<CR><Up><CR><Up><Tab>
 endfunction
 
-
+au BufRead,BufNewFile *.notes set filetype=notes
+au! Syntax notes source /home/bartosz/.vim/syntax/notes.vim
