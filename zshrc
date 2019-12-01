@@ -4,7 +4,6 @@ export ZSH=/home/bartosz/.oh-my-zsh
 export EPROVER=/home/bartosz/opt/E/PROVER/eprover
 alias eprover="/home/bartosz/opt/E/PROVER/eprover"
 
-
 # Vim key bindings
 bindkey -v
 export KEYTIMEOUT=1
@@ -99,48 +98,85 @@ alias rr="ranger"
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+
+BACKUP_DIR=/run/media/bartosz/DATADRIVE1/BACKUPS
+backup () {
+	DIR_TO_BACKUP=`realpath $1`
+	DIR_TO_BACKUP_NAME=`echo $DIR_TO_BACKUP | rev | cut -d'/' -f1 | rev`
+	DATE=`date +%F--%H-%M-%S`
+	DIR_TO_BACKUP_NEW=$BACKUP_DIR/$DIR_TO_BACKUP_NAME--$DATE
+	DIR_TO_BACKUP_NEW_PARTIAL=$DIR_TO_BACKUP_NEW--PARTIAL
+	mkdir $DIR_TO_BACKUP_NEW_PARTIAL
+	if rsync -av $DIR_TO_BACKUP/ $DIR_TO_BACKUP_NEW_PARTIAL
+	then
+		mv $DIR_TO_BACKUP_NEW_PARTIAL $DIR_TO_BACKUP_NEW
+		DIR_TO_BACKUP_SIZE=`du -hd0 $DIR_TO_BACKUP | cut -f1`
+		DIR_TO_BACKUP_NEW_SIZE=`du -hd0 $DIR_TO_BACKUP_NEW | cut -f1`
+		echo
+		echo Directory:
+		echo "$DIR_TO_BACKUP ($DIR_TO_BACKUP_SIZE)"
+		echo fully backuped to:
+		echo "$DIR_TO_BACKUP_NEW ($DIR_TO_BACKUP_NEW_SIZE)"
+	else
+		DIR_TO_BACKUP_SIZE=`du -hd0 $DIR_TO_BACKUP | cut -f1`
+		DIR_TO_BACKUP_NEW_PARTIAL_SIZE=`du -hd0 $DIR_TO_BACKUP_NEW_PARTIAL \
+													| cut -f1`
+		echo
+		echo Directory:
+		echo "$DIR_TO_BACKUP ($DIR_TO_BACKUP_SIZE)"
+		echo PARTIALLY backuped to:
+		echo "$DIR_TO_BACKUP_NEW_PARTIAL ($DIR_TO_BACKUP_NEW_PARTIAL_SIZE)"
+	fi
+}
+
+alias bb="backup"
+alias bbh="backup ~"
+alias bbp="backup ~/PhD"
+alias bbn="backup ~/Notes; backup ~/PhD/NOTES"
+
+alias bbl="l $BACKUP_DIR"
+
+#alias bb="
+#cd /run/media/bartosz/DATADRIVE1/BACKUPS;
+#mkdir HOME-PARTIAL;
+#rsync -av ~/ HOME-PARTIAL;
+#mv HOME-PARTIAL HOME-`date +%F`
+#"
 #
-
-alias bb="
-cd /run/media/bartosz/DATADRIVE1/BACKUPS;
-mkdir HOME-PARTIAL;
-rsync -av ~/ HOME-PARTIAL;
-mv HOME-PARTIAL HOME-`date +%F`
-"
-
-# rsync will delete files not present in ~/
-alias bbd="rsync -av --delete \
---exclude 'tmp*' \
---exclude 'Videos' \
---exclude 'Music' \
---exclude 'Pictures' \
---exclude 'Downloads' \
---exclude 'R' \
---exclude 'E' \
---exclude '.cache' \
---exclude '*Trash*' \
-~/ /run/media/bartosz/BACKUPSTICK/"
-
-alias bbs="rsync -av \
---exclude '.*' \
---exclude 'tmp*' \
---exclude 'Archivalias' \
---exclude 'Videos' \
---exclude 'Music' \
---exclude 'Pictures' \
---exclude 'Downloads' \
---exclude 'R' \
---exclude 'E' \
---exclude '.cache' \
---exclude '*Trash*' \
-~/ /run/media/bartosz/BACKUPSTICK/"
-
-alias bbp="rsync -av \
---exclude '.*' \
---exclude 'tmp*' \
---exclude '.cache' \
---exclude '*Trash*' \
-~/PhD/ /run/media/bartosz/BACKUPSTICK/PhD/"
+## rsync will delete files not present in ~/
+#alias bbd="rsync -av --delete \
+#--exclude 'tmp*' \
+#--exclude 'Videos' \
+#--exclude 'Music' \
+#--exclude 'Pictures' \
+#--exclude 'Downloads' \
+#--exclude 'R' \
+#--exclude 'E' \
+#--exclude '.cache' \
+#--exclude '*Trash*' \
+#~/ /run/media/bartosz/BACKUPSTICK/"
+#
+#alias bbs="rsync -av \
+#--exclude '.*' \
+#--exclude 'tmp*' \
+#--exclude 'Archivalias' \
+#--exclude 'Videos' \
+#--exclude 'Music' \
+#--exclude 'Pictures' \
+#--exclude 'Downloads' \
+#--exclude 'R' \
+#--exclude 'E' \
+#--exclude '.cache' \
+#--exclude '*Trash*' \
+#~/ /run/media/bartosz/BACKUPSTICK/"
+#
+#alias bbp="rsync -av \
+#--exclude '.*' \
+#--exclude 'tmp*' \
+#--exclude '.cache' \
+#--exclude '*Trash*' \
+#~/PhD/ /run/media/bartosz/BACKUPSTICK/PhD/"
 
 alias gtop="watch -n 0.5 nvidia-smi"
 
@@ -187,31 +223,46 @@ alias wwl="vim ~/Notes/parole-lt.md; clear"
 alias wwc="vim ~/Notes/parole-cz.md; clear"
 alias gge="vim ~/Notes/english-grammar-notes.md; clear"
 alias ttp="vim ~/PhD/NOTES/TODO.md; clear"
+alias dep="vim ~/PhD/NOTES/DAILY-EXECUTION.md; clear"
 alias nnp="vim ~/PhD/NOTES/NOTES.md; clear"
 alias pps="vim ~/PhD/NOTES/PAPERS-summaries.md; clear"
 alias ppq="vim ~/PhD/NOTES/PAPERS-queue.md; clear"
 alias hh="vim ~/Documents/homepage.html; clear"
 
+alias lt="ls -ltFhr"
 
 alias z600="ssh -t bp319501@students.mimuw.edu.pl ssh bartosz@10.3.5.247"
-alias grid01="ssh bartosz@grid01.ciirc.cvut.cz"
-alias grid03="ssh piotrbar@grid.ciirc.cvut.cz"
-alias grid04="ssh -t piotrbar@grid.ciirc.cvut.cz ssh 10.35.125.53"
-alias grid05="ssh -t piotrbar@grid.ciirc.cvut.cz ssh 10.35.125.54"
-alias grid06="ssh -t piotrbar@grid.ciirc.cvut.cz ssh 10.35.125.50"
-alias grid07="ssh -t piotrbar@grid.ciirc.cvut.cz ssh 10.35.125.55"
-alias grid08="ssh -t piotrbar@grid.ciirc.cvut.cz ssh 10.35.125.56"
-alias grid09="ssh -t piotrbar@grid.ciirc.cvut.cz ssh 10.35.125.57"
-alias grid10="ssh -t piotrbar@grid.ciirc.cvut.cz ssh 10.35.125.58"
-alias grid11="ssh -t piotrbar@grid.ciirc.cvut.cz ssh 10.35.125.59"
-alias grid12="ssh -t piotrbar@grid.ciirc.cvut.cz ssh 10.35.125.60"
-alias grid13="ssh -t piotrbar@grid.ciirc.cvut.cz ssh 10.35.125.61"
-alias grid14="ssh -t piotrbar@grid.ciirc.cvut.cz ssh 10.35.125.62"
 alias air01="ssh -t bartosz@grid01.ciirc.cvut.cz ssh 10.35.125.68"
+alias air02="ssh -t bartosz@grid01.ciirc.cvut.cz ssh 10.35.125.69"
+alias air03="ssh -t bartosz@grid01.ciirc.cvut.cz ssh 10.35.125.70"
+alias air04="ssh -t bartosz@grid01.ciirc.cvut.cz ssh 10.35.125.71"
+alias air05="ssh -t bartosz@grid01.ciirc.cvut.cz ssh 10.35.125.72"
 alias duch="ssh bp319501@duch.mimuw.edu.pl"
 alias students="ssh bp319501@students.mimuw.edu.pl"
 alias icm="ssh bartosz@login.icm.edu.pl"
 alias home="ssh serwer1766398@serwer1766398.home.pl"
+alias ciirc00="ssh piotrbar@cluster.ciirc.cvut.cz"
+alias ciirc01="ssh -t piotrbar@cluster.ciirc.cvut.cz ssh node-01"
+alias ciirc02="ssh -t piotrbar@cluster.ciirc.cvut.cz ssh node-02"
+alias ciirc14="ssh -t piotrbar@cluster.ciirc.cvut.cz ssh node-14"
+alias ciirc15="ssh -t piotrbar@cluster.ciirc.cvut.cz ssh node-15"
+alias ciirc16="ssh -t piotrbar@cluster.ciirc.cvut.cz ssh node-16"
+alias ciirc17="ssh -t piotrbar@cluster.ciirc.cvut.cz ssh node-17"
+alias ciirc18="ssh -t piotrbar@cluster.ciirc.cvut.cz ssh node-18"
+
+alias grid00="ssh piotrbar@grid.ciirc.cvut.cz"
+alias grid01="ssh bartosz@grid01.ciirc.cvut.cz"
+#alias grid04="ssh -t piotrbar@grid.ciirc.cvut.cz ssh 10.35.125.53"
+alias grid05="ssh -t piotrbar@grid.ciirc.cvut.cz ssh 10.35.125.54"
+#alias grid06="ssh -t piotrbar@grid.ciirc.cvut.cz ssh 10.35.125.50"
+#alias grid07="ssh -t piotrbar@grid.ciirc.cvut.cz ssh 10.35.125.55"
+#alias grid08="ssh -t piotrbar@grid.ciirc.cvut.cz ssh 10.35.125.56"
+#alias grid09="ssh -t piotrbar@grid.ciirc.cvut.cz ssh 10.35.125.57"
+#alias grid10="ssh -t piotrbar@grid.ciirc.cvut.cz ssh 10.35.125.58"
+#alias grid11="ssh -t piotrbar@grid.ciirc.cvut.cz ssh 10.35.125.59"
+#alias grid12="ssh -t piotrbar@grid.ciirc.cvut.cz ssh 10.35.125.60"
+#alias grid13="ssh -t piotrbar@grid.ciirc.cvut.cz ssh 10.35.125.61"
+#alias grid14="ssh -t piotrbar@grid.ciirc.cvut.cz ssh 10.35.125.62"
 
 alias sls="screen -ls"
 alias sr="screen -r"
@@ -220,9 +271,11 @@ alias sS="screen -S"
 alias py="python3"
 alias py3="python3"
 alias py2="python2"
+alias pya3="anaconda3"
+alias pya="anaconda3"
 
-#alias sa="source activate"
-#alias sd="source deactivate"
+alias saa="source activate"
+alias sda="source deactivate"
 
 alias sa='f() {source ~/envs/$1/bin/activate};f'
 
@@ -245,6 +298,8 @@ alias gg='grep -rnI . -e'
 alias ggi='grep -rnIi . -e' # ignore case (-i)
 alias gpar='f(){echo; awk "/$1/" RS="\n\n" ORS="\n\n" $2};f'
 alias pdfgrep='pdfgrep -n'
+
+alias dedup='awk "!visited[$0]++"'
 
 alias wgetdir='wget -r -np -nH -R "index.html*"'
 
@@ -273,7 +328,27 @@ TIMEFMT='%J   %U  user %S system %P cpu %*E total'$'\n'\
 'page faults from disk:     %F'$'\n'\
 'other page faults:         %R'
 
+# # ex - archive extractor
+# # usage: ex <file>
+ex ()
+{
+  if [ -f $1 ] ; then
+    case $1 in
+      *.tar.bz2)   tar xjf $1   ;;
+      *.tar.gz)    tar xzf $1   ;;
+      *.bz2)       bunzip2 $1   ;;
+      *.rar)       unrar x $1     ;;
+      *.gz)        gunzip $1    ;;
+      *.tar)       tar xf $1    ;;
+      *.tbz2)      tar xjf $1   ;;
+      *.tgz)       tar xzf $1   ;;
+      *.zip)       unzip $1     ;;
+      *.Z)         uncompress $1;;
+      *.7z)        7z x $1      ;;
+      *)           echo "'$1' cannot be extracted via ex()" ;;
+    esac
+  else
+    echo "'$1' is not a valid file"
+  fi
+}
 
-# Temporary aliases
-alias sid="cd PhD/TEACHING/SID/"
-alias sad="cd PhD/TEACHING/SAD/"
