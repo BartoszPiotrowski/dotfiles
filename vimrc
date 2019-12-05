@@ -11,7 +11,7 @@ Plugin 'gmarik/Vundle.vim'
 " Plugins
 " Plugin 'scrooloose/syntastic'
 "-- YCM better installed via yaourt
-Plugin 'Valloric/YouCompleteMe'
+"Plugin 'Valloric/YouCompleteMe'
 Plugin 'vim-scripts/indentpython.vim'
 "Plugin 'jiangmiao/auto-pairs'
 "Plugin 'auto-pairs-gentle'
@@ -96,7 +96,7 @@ au BufNewFile,BufRead *.py
     \ set tabstop=8 |
     \ set softtabstop=4 |
     \ set shiftwidth=4 |
-    \ set textwidth=85 |
+    \ set textwidth=80 |
     \ set expandtab |
     \ set autoindent |
     \ set fileformat=unix |
@@ -157,8 +157,8 @@ au VimLeave * :!clear
 
 "nnoremap ; :
 
-nmap PL :set spell spelllang=pl<CR>
-nmap EN :set spell spelllang=en<CR>
+command PL execute "set spell spelllang=pl"
+command EN execute "set spell spelllang=en"
 
 " Abbreviations
 iab wtw wtedy i tylko wtedy, gdy
@@ -179,7 +179,7 @@ iab boo bez utraty ogólności
 
 " Define specific options for some file types
 autocmd FileType plaintex,tex call ModeTex()
-autocmd FileType python setlocal formatprg=autopep8\ -
+"autocmd FileType python setlocal formatprg=autopep8\ -
 
 function! ModeTex()
 	nmap <C-a> :w<CR> :! pdflatex %<CR>
@@ -192,6 +192,8 @@ function! ModeTex()
 	inoremap <buffer> TH \begin{thm}<CR>\end{thm}<Esc>O
 	inoremap <buffer> TW \begin{tw}<CR>\end{tw}<Esc>O
 	inoremap <buffer> STW \begin{stw}<CR>\end{stw}<Esc>O
+	inoremap <buffer> LM \begin{lem}<CR>\end{lem}<Esc>O
+	inoremap <buffer> LEM \begin{lem}<CR>\end{lem}<Esc>O
 	inoremap <buffer> WN \begin{wn}<CR>\end{wn}<Esc>O
 	inoremap <buffer> UW \begin{uw}<CR>\end{uw}<Esc>O
 	inoremap <buffer> FT \begin{fakt}<CR>\end{fakt}<Esc>O
