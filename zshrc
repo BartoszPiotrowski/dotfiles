@@ -100,8 +100,13 @@ alias rr="ranger"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 
-BACKUP_DIR=/run/media/bartosz/DATADRIVE1/BACKUPS
+MOUNT_POINT=/run/media/bartosz/
+DISK_LABEL=DATADRIVE1
+BACKUP_DIR=$MOUNT_POINT/$DISK_LABEL/BACKUPS
 backup () {
+	DISK_PATH=`lsblk -i -o PATH,LABEL | grep $DISK_LABEL | cut -d' ' -f1`
+	sudo mkdir -p $MOUNT_POINT/$DISK_LABEL
+	sudo mount $DISK_PATH $MOUNT_POINT/$DISK_LABEL
 	DIR_TO_BACKUP=`realpath $1`
 	DIR_TO_BACKUP_NAME=`echo $DIR_TO_BACKUP | rev | cut -d'/' -f1 | rev`
 	DATE=`date +%F--%H-%M-%S`

@@ -31,8 +31,8 @@ syntax enable
 filetype plugin indent on
 let python_highlight_all = 1
 
-let g:ycm_path_to_python_interpreter = '/usr/bin/python'
-let g:ycm_server_python_interpreter = '/usr/bin/python'
+let g:ycm_path_to_python_interpreter = '/usr/bin/python3.7'
+let g:ycm_server_python_interpreter = '/usr/bin/python3.7'
 let g:ycm_global_ycm_extra_conf = '/usr/share/vim/vimfiles/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
 let g:ycm_filetype_blacklist = {}
 " let g:ycm_autoclose_preview_window_after_completion=1
