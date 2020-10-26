@@ -9,30 +9,33 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
 " Plugins
-" Plugin 'scrooloose/syntastic'
-"-- YCM better installed via yaourt
-"Plugin 'Valloric/YouCompleteMe'
 Plugin 'vim-scripts/indentpython.vim'
-"Plugin 'jiangmiao/auto-pairs'
-"Plugin 'auto-pairs-gentle'
 Plugin 'chriskempson/base16-vim'
-Plugin 'altercation/vim-colors-solarized'
-"Plugin 'lervag/vimtex'
 Plugin 'tpope/vim-surround'
 Plugin 'git@github.com:hdima/python-syntax.git'
-"Plugin 'godlygeek/tabular'
+Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
+Plugin 'leanprover/lean.vim'
+"Plugin  'vim-pandoc/vim-rmarkdown'
+"Plugin  'vim-pandoc/vim-pandoc'
+"Plugin  'vim-pandoc/vim-pandoc-syntax'
+"Plugin 'jiangmiao/auto-pairs'
+"Plugin 'auto-pairs-gentle'
 "Plugin 'vim-airline/vim-airline'
 "Plugin 'vim-airline/vim-airline-themes'
 "Plugin 'chrisbra/csv.vim'
+"Plugin 'altercation/vim-colors-solarized'
+"Plugin 'lervag/vimtex'
+" Plugin 'scrooloose/syntastic'
+"-- YCM better installed via yaourt
+Plugin 'Valloric/YouCompleteMe'
 call vundle#end()
 
 syntax enable
 filetype plugin indent on
-let python_highlight_all = 1
 
-let g:ycm_path_to_python_interpreter = '/usr/bin/python3.7'
-let g:ycm_server_python_interpreter = '/usr/bin/python3.7'
+let g:ycm_path_to_python_interpreter = '/usr/bin/python3.8'
+let g:ycm_server_python_interpreter = '/usr/bin/python3.8'
 let g:ycm_global_ycm_extra_conf = '/usr/share/vim/vimfiles/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
 let g:ycm_filetype_blacklist = {}
 " let g:ycm_autoclose_preview_window_after_completion=1
@@ -40,7 +43,7 @@ let g:ycm_filetype_blacklist = {}
 set completeopt-=preview
 
 set background=dark
-colorscheme solarized
+"colorscheme solarized
 colorscheme base16-solarized-dark
 "let g:solarized_termcolors=256
 "let g:solarized_termcolors=16
@@ -51,7 +54,13 @@ set relativenumber
 highlight LineNr ctermfg=DarkGrey ctermbg=NONE
 highlight CursorLineNr ctermfg=DarkGrey ctermbg=NONE
 
+"highlight clear SpellBad
+"highlight SpellBad cterm=underline ctermfg=red
+
 set scrolloff=15
+
+set textwidth=80
+
 
 " Disable Arrow keys in Escape mode
 " map <up> <nop>
@@ -85,13 +94,19 @@ nnoremap <C-K> <C-W>k
 nnoremap <C-H> <C-W>h
 nnoremap <C-L> <C-W>l
 
-
+" when moving between paragraphs put cursor in the firs line of the paragraph
+"nnoremap { {(
+"nnoremap } })
+"
 set breakindent
 set linebreak
 set showbreak=>
 set tabstop=4
 set shiftwidth=4
 
+au BufRead,BufNewFile *.ml,*.mli compiler ocaml
+
+let python_highlight_all = 1
 au BufNewFile,BufRead *.py
     \ set tabstop=8 |
     \ set softtabstop=4 |
@@ -139,6 +154,7 @@ let g:tex_comment_nospell = 1
 " http://vim.1045645.n5.nabble.com/Slow-Syntax-Highlighting-with-Latex-td5716260.html
 
 nmap <CR> gql
+"nmap gqip gqip vip:s/  / /<CR>
 
 " substitute in all lines
 nmap <C-s> :%s/
@@ -148,6 +164,19 @@ nmap <C-w> :w<CR>
 nmap <C-x> :x<CR>
 "inoremap <Esc> <Esc>`^:w<CR>
 "nnoremap <Esc> <Esc>:w<CR>
+
+nnoremap + <C-a>
+nnoremap - <C-x>
+
+autocmd FileType markdown call ModeMarkdown()
+function! ModeMarkdown()
+nnoremap = r+j
+nnoremap 8 r*j
+endfunction
+
+" comment-out whole paragraph at once (using #)
+nnoremap <C-c> vip:s/^/#/<CR>
+nnoremap <C-h> vip:s/^#//<CR>
 
 "command Pep execute ':!autopep8 -aaa --in-place %'
 
@@ -182,6 +211,8 @@ autocmd FileType plaintex,tex call ModeTex()
 "autocmd FileType python setlocal formatprg=autopep8\ -
 
 function! ModeTex()
+	set indentexpr=
+
 	nmap <C-a> :w<CR> :! pdflatex %<CR>
 
 	inoremap <buffer> FR \begin{frame}<CR>\end{frame}<Esc>k
@@ -305,3 +336,15 @@ endfunction
 
 au BufRead,BufNewFile *.notes set filetype=notes
 au! Syntax notes source /home/bartosz/.vim/syntax/notes.vim
+
+au BufRead,BufNewFile *mutt*post* set filetype=mail_simple
+au! Syntax mail_simple source /home/bartosz/.vim/syntax/mail_simple.vim
+
+autocmd BufRead,BufNewFile *TODO-daily.md call ModeTODO()
+function! ModeTODO()
+	"nnoremap @ O<Esc>:r! echo \\# `date +'\%d-\%m-\%Y, \%A' --date=tomorrow`<CR>:r daily.txt<CR><CR>}ka
+	nnoremap @ O<Esc>:r! echo \\# `date +'\%d-\%m-\%Y, \%A' --date=today`<CR>:r daily.txt<CR><CR>}k
+endfunction
+
+set tags=tags;/
+
